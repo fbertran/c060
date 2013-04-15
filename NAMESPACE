@@ -1,0 +1,19 @@
+import(peperr)
+
+export(stability.path,
+       stability.selection,
+       aggregation.auc,
+       complexity.glmnet,
+       fit.glmnet,
+       Plot.peperr.curves,
+       EPSGO,
+       tune.glmnet.interval,my.balanced.folds,
+       get.cofn.int.search
+       )
+
+S3method("plot","stabpath")
+S3method("PLL","coxnet")
+S3method("predictProb","glmnet")
+S3method("predictProb","coxnet")
+S3method("plot","summary.int")
+S3method("summary","intsearch")
