@@ -4,8 +4,8 @@
 
 \title{  Wrapper function for \code{glmnet} objects.    }
 \description{
-   Wrapper function for \code{glmnet} objects used by \code{EPSGO} function.
-   This function is  mainly used within the function \code{\link{EPSGO}}  
+   Wrapper function for \code{glmnet} objects used by \code{epsgo} function.
+   This function is  mainly used within the function \code{\link{epsgo}}  
 }
 
 
@@ -67,7 +67,7 @@ tune.glmnet.interval(parms, x, y,
 } 
 \author{Natalia Becker  natalia.becker at dkfz.de }
 
-\seealso{\code{\link{EPSGO}}}
+\seealso{\code{\link{epsgo}}}
 
 \keyword{models}
 \keyword{multivariate}

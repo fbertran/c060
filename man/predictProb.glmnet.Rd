@@ -41,5 +41,5 @@ Thomas Hielscher \
 \email{t.hielscher@dkfz.de}
 }
 
-\seealso{\code{\link[peperr]{peperr}}, \code{\link[glmnet]{glmnet}}}
+\seealso{\code{\link[c060]{predictProb.coxnet}}, \code{\link[peperr]{peperr}}, \code{\link[glmnet]{glmnet}}}
 \keyword{models} \keyword{penalized regression} \keyword{survival}

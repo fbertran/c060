@@ -1,5 +1,5 @@
-\name{get.cofn.int.search}
-\alias{get.cofn.int.search}
+\name{coef.sum.intsearch}
+\alias{coef.sum.intsearch}
 
 \title{
 Get coefficients for a model 
@@ -8,23 +8,21 @@ Get coefficients for a model
 Get coefficients for a model after applying interval search for tuning parameters 
 }
 \usage{
-get.cofn.int.search(model)
+\method{coef}{sum.intsearch}(object,\dots)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-\item{model}{ an object as returned by the function \code{summary.int.search}.}
+\item{object}{ an object as returned by the function \code{summary.intsearch}.}
+\item{\dots}{additional argument(s)}
 }
-
-
 \value{
  named vector of non-zero coeficients for the optimal lambda}
-
 \author{
 Natalia Becker  \
 \email{natalia.becker@dkfz.de}
 }
 
-\seealso{ \code{\link{EPSGO}}, \code{\link{summary.intsearch}}
+\seealso{ \code{\link{EPSGO}}, \code{\link{summary.intsearch}},\code{\link{plot.sum.intsearch}}
 }
 
 \keyword{system}

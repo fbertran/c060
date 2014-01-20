@@ -1,7 +1,7 @@
 
 ###########################################################################################################
 ###########################################################################################################
-EPSGO<- function(
+epsgo<- function(
 								# function to be minimized
 								Q.func, 
 								# bounds for parameters
@@ -69,14 +69,10 @@ EPSGO<- function(
 	#							neval = neval + 1
 	#			UNTIL convergence
 	
-	
-	require(tgp) #lhs  - Latin Hypercube sampling function
-	require(mlegp)
-	
-	
-	print("parms.coding")
-	print(parms.coding)
-	
+	if (verbose){
+	  print("parms.coding")
+	  print(parms.coding)
+	}
 	
 	
 	###################################################################################################################
@@ -110,7 +106,7 @@ EPSGO<- function(
 	# round.n -number of digits after comma
 	X<-round(X,round.n)
 	
-	print(X)
+	if (verbose) print(X)
 	
 	if(show !="none" & !is.null(pdf.name)) { 
 		pdf(pdf.name, pdf.width, pdf.height)
@@ -149,9 +145,7 @@ EPSGO<- function(
 	Q.min <- min (Q, na.rm=T)
 	min.p<- X[which.min(Q), , drop=FALSE]
 	
-  print(str(X))
-  print(str(Q))
-	print(data.frame(X,Q))
+	if (verbose) print(data.frame(X,Q))
 	
 	# delete the point(s) with no Q value(s)
 	X <- X[!is.na(Q), ,drop=FALSE]
@@ -260,14 +254,14 @@ EPSGO<- function(
 			Xtrain = rbind(Xtrain, X)
 			Ytrain = c(Ytrain, Q )	
 			
-			print(data.frame(Xtrain,Ytrain))
+      if (verbose) print(data.frame(Xtrain,Ytrain))
 			
 			# fmin =  current min of Q.func at point xmin. 
 			fmin<- min(Ytrain)
 			xmin = Xtrain[which.min(Ytrain),]	
 		}
 		
-		print(paste("fmin=",fmin))
+		if (verbose) print(paste("fmin=",fmin))
 		if (fmin < fminlower){ 
 				break
 			} 

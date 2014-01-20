@@ -22,7 +22,7 @@ summary.intsearch<-function(object,digits = max(3, getOption("digits") - 3), ver
   out <- list(info=data.frame(alpha=alphas,lambda=lambdas,deviance=deviances,n.features=n.features),
               opt.alpha=opt.alpha, opt.lambda=opt.lambda, opt.error=opt.error,
               opt.models=opt.models)
-  class(out) <- "summary.int"
+  class(out) <- "sum.intsearch"
   
   if(verbose){
     cat("Summary interval search \n\n")

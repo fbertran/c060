@@ -1,6 +1,6 @@
 ###############################################################
 # baseline survival/ hazard Breslow estimator
-# function essentially based on gbm:::basehaz.gbm
+# function essentially based on gbm::basehaz.gbm
 ###############################################################
 basesurv <- function (response, lp, times.eval = NULL, centered = FALSE)
 {
@@ -28,7 +28,7 @@ basesurv <- function (response, lp, times.eval = NULL, centered = FALSE)
 
 fit.glmnet <- function (response, x, cplx, ...) 
 {
-    require(glmnet)
+    #require(glmnet)
     res <- NULL
     tryerr <- try(res <- glmnet(y = response, x = data.matrix(x), lambda = cplx,  ...), silent=TRUE)
 
@@ -41,7 +41,7 @@ fit.glmnet <- function (response, x, cplx, ...)
 
 complexity.glmnet <- function (response, x, full.data, ...) 
 {
-    require(glmnet)
+    #require(glmnet)
     lambda <- NULL
     tryerr <- try(cv <- cv.glmnet(y = response, x = data.matrix(x),  ...), silent=TRUE)
     
@@ -53,7 +53,7 @@ complexity.glmnet <- function (response, x, full.data, ...)
 
 predictProb.coxnet <- predictProb.glmnet <- function (object, response, x, times, complexity,  ...) 
 {
-    require(glmnet)    
+    #require(glmnet)    
     lp       <- as.numeric(predict(object, newx=data.matrix(x),s=complexity, type="link"))
     basesurv <- basesurv(object$response,object$linear.predictor, sort(unique(times)))
     p        <- exp(exp(lp) %*% -t(basesurv$cumBaseHaz))
@@ -65,8 +65,8 @@ predictProb.coxnet <- predictProb.glmnet <- function (object, response, x, times
 
 PLL.coxnet <- function(object, newdata, newtime, newstatus, complexity, ...) 
 {
-   require(glmnet)
-   PLL <- glmnet:::coxnet.deviance(pred = NULL, Surv(newtime,newstatus), x = data.matrix(newdata), offset = NULL, weights = NULL, beta = coef(object,s=complexity)) 
+   #require(glmnet)
+   PLL <- glmnet::coxnet.deviance(pred = NULL, Surv(newtime,newstatus), x = data.matrix(newdata), offset = NULL, weights = NULL, beta = coef(object,s=complexity)) 
    PLL / -2
 }
 
@@ -155,11 +155,11 @@ aggregation.auc <- function (full.data = NULL, response, x, model, cplx = NULL,
     }
     type <- match.arg(type)
     if (type == "apparent") {
-        auc <- glmnet:::auc(response,probs)
+        auc <- glmnet::auc(response,probs)
     }
     if (type == "noinf") {
         resp.mat <- matrix(response, length(response),  length(response), byrow = TRUE)
-        auc      <- mean(apply(resp.mat, 1, function(d) glmnet:::auc(d,probs)))
+        auc      <- mean(apply(resp.mat, 1, function(d) glmnet::auc(d,probs)))
     }
     auc
 }
@@ -170,7 +170,7 @@ aggregation.auc <- function (full.data = NULL, response, x, model, cplx = NULL,
 
 Plot.peperr.curves <- function(x,at.risk=TRUE,allErrors=FALSE,  bootRuns=FALSE, bootQuants=TRUE, bootQuants.level=0.95, leg.cex=0.7, ...) {
   
-  require(peperr)
+  #require(peperr)
 
   if (bootRuns) bootQuants <- FALSE
   

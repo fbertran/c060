@@ -3,7 +3,8 @@
 \title{Plot method for prediction error curves of a peperr object}
 \description{Plots individual and aggregated prediction error estimates based on bootstrap samples.}
 \usage{
-Plot.peperr.curves(x, at.risk=TRUE, allErrors=FALSE, bootRuns=FALSE, bootQuants=TRUE, bootQuants.level=0.95, leg.cex=0.7,...)
+Plot.peperr.curves(x, at.risk=TRUE, allErrors=FALSE, 
+bootRuns=FALSE, bootQuants=TRUE, bootQuants.level=0.95, leg.cex=0.7,...)
 }
 \arguments{
 \item{x}{\code{peperr} object.}

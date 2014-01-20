@@ -1,5 +1,5 @@
-\name{stability.path}
-\alias{stability.path}
+\name{stabpath}
+\alias{stabpath}
 \title{
 Stability path for glmnet models
 }
@@ -7,7 +7,7 @@ Stability path for glmnet models
 The function calculates the stability path for glmnet models, e.g. the selection probabilities of the features along the range of regularization parameters.
 }
 \usage{
-stability.path(y,x,size=0.632,steps=100,weakness=1,mc.cores=getOption("mc.cores", 2L),...)
+stabpath(y,x,size=0.632,steps=100,weakness=1,mc.cores=getOption("mc.cores", 2L),...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -68,24 +68,24 @@ Martin Sill
 \references{
 Meinshausen N. and B\"uhlmann P. (2010), Stability Selection, Journal of the Royal Statistical Society: Series B (Statistical Methodology) Volume 72, Issue 4, pages 417???473.
 }
-\seealso{ \code{\link{glmnet},\link{stability.selection},\link{plot.stabpath}}
+\seealso{ \code{\link{glmnet},\link{stabsel},\link{plot.stabpath}}
 }
 \examples{\dontrun{
 #gaussian
 set.seed(1234)
 x <- matrix(rnorm(100*1000,0,1),100,1000)
 y <- x[1:100,1:1000]\%*\% c(rep(2,5),rep(-2,5),rep(.1,990))
-res <- stability.path(y,x,weakness=1,mc.cores=2)
+res <- stabpath(y,x,weakness=1,mc.cores=2)
 plot(res)
 
 #binomial
 y=sample(1:2,100,replace=TRUE)
-res <- stability.path(y,x,weakness=1,mc.cores=2,family="binomial")
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="binomial")
 plot(res)
     
 #multinomial
 y=sample(1:4,100,replace=TRUE)
-res <- stability.path(y,x,weakness=1,mc.cores=2,family="multinomial")
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="multinomial")
 plot(res)
     
 #poisson
@@ -96,7 +96,7 @@ beta=rnorm(nzc)
 f = x[,seq(nzc)]\%*\%beta
 mu=exp(f)
 y=rpois(N,mu)
-res <- stability.path(y,x,weakness=1,mc.cores=2,family="poisson")
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="poisson")
 plot(res)
 
 #Cox
@@ -111,7 +111,7 @@ hx=exp(fx)
 ty=rexp(N,hx)
 tcens=rbinom(n=N,prob=.3,size=1)
 y=cbind(time=ty,status=1-tcens)
-res <- stability.path(y,x,weakness=1,mc.cores=2,family="cox")
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="cox")
 plot(res)
 }
 }

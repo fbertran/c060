@@ -1,5 +1,5 @@
 
-plot.summary.int <-function(x,type="summary",startN=21,...){
+plot.sum.intsearch <-function(x,type="summary",startN=21,...){
   if(type=="summary"){
   summary.int <- x
   summary.int$info$log_lambda <- log(summary.int$info$lambda)

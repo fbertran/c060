@@ -42,5 +42,5 @@ Thomas Hielscher \
 }
 
 
-\seealso{\code{\link[peperr]{peperr}}, \code{\link[glmnet]{glmnet}}}
+\seealso{\code{\link[c060]{predictProb.glmnet}},\code{\link[peperr]{peperr}}, \code{\link[glmnet]{glmnet}}}
 \keyword{models} \keyword{penalized regression} \keyword{survival}

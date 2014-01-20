@@ -15,7 +15,7 @@ Produces a summary of a fitted interval search model
   \item{digits}{ digits after the comma }
   \item{verbose}{ default set to TRUE.  }
   \item{first.n}{ show first.n entries , default 5. }
-  \item{...}{additional argument(s)}
+  \item{\dots}{additional argument(s)}
 }
 
 \value{
@@ -39,7 +39,7 @@ Natalia Becker  \
 \email{natalia.becker@dkfz.de}
 }
 
-\seealso{ \code{\link{EPSGO}}
+\seealso{ \code{\link{EPSGO}},\code{\link{plot.sum.intsearch}}
 }
 
 \keyword{summary}
