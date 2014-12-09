@@ -40,7 +40,10 @@ balancedFolds(class.column.factor, cross.outer)
 \keyword{multivariate}
 \keyword{iteration}
 \keyword{optimize}
-
+\references{
+Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
+\url{http://www.jstatsoft.org/v62/i05/}
+}
 
 
 

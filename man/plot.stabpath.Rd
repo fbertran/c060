@@ -60,7 +60,9 @@ Martin Sill \
 \email{m.sill@dkfz.de}
 }
 \references{
-Meinshausen N. and Buehlmann P. (2010), Stability Selection, Journal of the Royal Statistical Society: Series B (Statistical Methodology) Volume 72, Issue 4, pages 417-473.
+Meinshausen N. and Buehlmann P. (2010), Stability Selection, Journal of the Royal Statistical Society: Series B (Statistical Methodology) Volume 72, Issue 4, pages 417-473.\cr
+Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
+\url{http://www.jstatsoft.org/v62/i05/}
 }
 \seealso{ \code{\link{stabsel},\link{stabpath}}
 }
@@ -71,7 +73,7 @@ set.seed(1234)
 x=matrix(rnorm(100*1000,0,1),100,1000)
 y <- x[1:100,1:1000]\%*\%c(rep(2,5),rep(-2,5),rep(.1,990))
 res <- stabpath(y,x,weakness=1,mc.cores=2)
-plot(res,fwer=.5)
+plot(res,error=.5,type='pfer')
 }
 }
 \keyword{stability selection}

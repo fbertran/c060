@@ -28,3 +28,7 @@ Vector of length \code{n_new}
 Thomas Hielscher \
 \email{t.hielscher@dkfz.de}
 }
+\references{
+Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
+\url{http://www.jstatsoft.org/v62/i05/}
+}

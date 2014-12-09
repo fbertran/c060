@@ -1,6 +1,6 @@
 Package: c060
-Version: 0.2-3
-Date: 2014-01-20
+Version: 0.2-4
+Date: 2014-12-09
 Author: Martin Sill, Thomas Hielscher, Manuela Zucknick, Natalia Becker.
 Maintainer: Martin Sill <m.sill@dkfz.de>
 Title: Extended Inference for Lasso and Elastic-Net Regularized Cox and
@@ -14,8 +14,8 @@ License: GPL-2
 LazyLoad: yes
 Repository: CRAN
 Repository/R-Forge/Project: c060
-Repository/R-Forge/Revision: 168
-Repository/R-Forge/DateTimeStamp: 2014-01-21 21:29:53
-Date/Publication: 2014-01-22 13:10:05
-Packaged: 2014-01-21 23:19:49 UTC; rforge
+Repository/R-Forge/Revision: 185
+Repository/R-Forge/DateTimeStamp: 2014-12-11 13:09:54
+Date/Publication: 2014-12-11 17:04:36
+Packaged: 2014-12-11 13:30:10 UTC; rforge
 NeedsCompilation: no

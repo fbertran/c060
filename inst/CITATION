@@ -1,0 +1,21 @@
+citHeader("To cite c060 in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{c060}: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models",
+  author       = personList(as.person("Martin Sill"),
+                   as.person("Thomas Hielscher"),
+                   as.person("Natalia Becker"),
+                   as.person("Manuela Zucknick")),
+  journal      = "Journal of Statistical Software",
+  year         = "2014",
+  volume       = "62",
+  number       = "5",
+  pages        = "1--22",
+  url          = "http://www.jstatsoft.org/v62/i05/",
+
+  textVersion  =
+  paste("Martin Sill, Thomas Hielscher, Natalia Becker, Manuela Zucknick (2014).",
+        "c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models.",
+        "Journal of Statistical Software, 62(5), 1-22.",
+        "URL http://www.jstatsoft.org/v62/i05/.")
+)

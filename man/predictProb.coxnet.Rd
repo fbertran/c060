@@ -33,7 +33,9 @@ Matrix with probabilities for each evaluation time point in \code{times} (column
   \url{http://www.jstatsoft.org/v39/i05/}\cr
    Porzelius, C., Binder, H., and Schumacher, M. (2009) 
    \emph{Parallelized prediction error estimation for evaluation of high-dimensional models,
-   Bioinformatics, Vol. 25(6), 827-829.}
+   Bioinformatics, Vol. 25(6), 827-829.}\cr
+      Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
+   \url{http://www.jstatsoft.org/v62/i05/}
 }
 
 \author{

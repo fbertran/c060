@@ -22,11 +22,11 @@ Produces a summary of a fitted interval search model
   A list of following elements 
   \item{info}{
     a data frame of four objects for optimal models\cr
-      \describe{  
-        \item{alpha}{a vector of alphas }
-        \item{lambda}{a vector of  penalization parameter lambda}
-        \item{deviances}{    a vector of deviances  }
-        \item{n.features}{a vector of number of features selected in each optimal model }
+      \itemize{  
+        \item alpha - a vector of alphas 
+        \item lambda - a vector of  penalization parameter lambda
+        \item deviances - a vector of deviances
+        \item n.features -a vector of number of features selected in each optimal model
       }
   }  
   \item{opt.alpha}{ an optimal value for alpha}
@@ -41,5 +41,8 @@ Natalia Becker  \
 
 \seealso{ \code{\link{EPSGO}},\code{\link{plot.sum.intsearch}}
 }
-
+\references{
+Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
+\url{http://www.jstatsoft.org/v62/i05/}
+}
 \keyword{summary}

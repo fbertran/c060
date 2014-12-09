@@ -66,7 +66,10 @@ Martin Sill
 \email{m.sill@dkfz.de}
 }
 \references{
-Meinshausen N. and B\"uhlmann P. (2010), Stability Selection, Journal of the Royal Statistical Society: Series B (Statistical Methodology) Volume 72, Issue 4, pages 417???473.
+Meinshausen N. and B\"uhlmann P. (2010), \emph{Stability Selection, Journal of the Royal Statistical Society: Series B (Statistical Methodology) Volume 72, Issue 4, pages 417--473.}\cr
+
+Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
+\url{http://www.jstatsoft.org/v62/i05/}
 }
 \seealso{ \code{\link{glmnet},\link{stabsel},\link{plot.stabpath}}
 }

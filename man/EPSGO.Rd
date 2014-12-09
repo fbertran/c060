@@ -75,7 +75,6 @@ epsgo(Q.func, bounds,  round.n=5, parms.coding="none",
 
 	The code source was adopted from MATLAB originals, special thanks to Holger Froehlich.
 }
-
 	
 
 \author{ Natalia Becker natalia.becker at dkfz.de }
@@ -83,7 +82,10 @@ epsgo(Q.func, bounds,  round.n=5, parms.coding="none",
 \references{
 Froehlich, H. and Zell, A. (2005) "Effcient parameter selection for support vector
 machines in classification and regression via model-based global optimization"
-\emph{In Proc. Int. Joint Conf. Neural Networks,  1431-1438 }.
+\emph{In Proc. Int. Joint Conf. Neural Networks,  1431-1438 }.\cr
+
+Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
+\url{http://www.jstatsoft.org/v62/i05/}
 }
 
 \examples{
@@ -194,6 +196,5 @@ summary(fit)
 \keyword{ graphs }
 \keyword{ iteration }
 \keyword{ optimize }
-
 
 
