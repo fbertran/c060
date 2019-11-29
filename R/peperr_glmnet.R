@@ -155,11 +155,11 @@ aggregation.auc <- function (full.data = NULL, response, x, model, cplx = NULL,
     }
     type <- match.arg(type)
     if (type == "apparent") {
-        auc <- glmnet::auc(response,probs)
+        auc <- auc(response,probs)
     }
     if (type == "noinf") {
         resp.mat <- matrix(response, length(response),  length(response), byrow = TRUE)
-        auc      <- mean(apply(resp.mat, 1, function(d) glmnet::auc(d,probs)))
+        auc      <- mean(apply(resp.mat, 1, function(d) auc(d,probs)))
     }
     auc
 }

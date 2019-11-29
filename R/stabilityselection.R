@@ -1,6 +1,3 @@
-#require(glmnet)
-#require(parallel)
-
 stabpath <- function(y,x,size=0.632,steps=100,weakness=1,mc.cores=getOption("mc.cores", 2L),...){
   fit <- glmnet(x,y,...)
   if(class(fit)[1]=="multnet"|class(fit)[1]=="lognet") y <- as.factor(y)
@@ -62,9 +59,9 @@ glmnet.subset <- function(index,subsets,x,y,lambda,weakness,p,...){
 stabsel <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6){
   if(pi_thr <= 0.5 | pi_thr >= 1) stop("pi_thr needs to be > 0.5 and < 1!")
   if(class(x$fit)[1]=="multnet"){
-  p <- dim(x$fit$beta[[1]])[1]
+    p <- dim(x$fit$beta[[1]])[1]
   }else{
-	p <- dim(x$fit$beta)[1]
+    p <- dim(x$fit$beta)[1]
   }
   type <- match.arg(type)
   switch(type,
@@ -72,17 +69,17 @@ stabsel <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6){
            if(error>=1 | error<=0)stop("pcer needs to be > 0 and < 1!")
            qv <- ceiling(sqrt(error* p * (2*pi_thr-1)*p)) },
          "pfer"={
-          qv <- ceiling(sqrt(error * (2*pi_thr-1)*p)) }
-         )
+           qv <- ceiling(sqrt(error * (2*pi_thr-1)*p)) }
+  )
   if(x$qs[length(x$qs)]<=qv){ lpos <- length(x$qs)
-    }else{
-  lpos <- which(x$qs>qv)[1]
+  }else{
+    lpos <- which(x$qs>qv)[1]
   }
-	if(!is.na(lpos)){stable <- which(x$x[,lpos]>=pi_thr)}else{
+  if(!is.na(lpos)){stable <- which(x$x[,lpos]>=pi_thr)}else{
     stable <- NA
-	}
-	out <- list(stable=stable,lambda=x$fit$lambda[lpos],lpos=lpos,error=error,type=type)
-	return(out)
+  }
+  out <- list(stable=stable,lambda=x$fit$lambda[lpos],lpos=lpos,error=error,type=type)
+  return(out)
 }
 
 print.stabpath <- function(x,...){
@@ -100,24 +97,24 @@ plot.stabpath <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6,xvar=c("
   }else{
     beta = as.matrix(x$fit$beta)
   }  
-    p <- dim(beta)[1]
-    which = nonzeroCoef(beta)
-    nwhich = length(which)
-    switch(nwhich + 1, `0` = {
-      warning("No plot produced since all coefficients zero")
-      return()
-    }, `1` = warning("1 or less nonzero coefficients; glmnet plot is not meaningful"))
-    xvar = match.arg(xvar)
-    switch(xvar, norm = {
-      index = apply(abs(beta), 2, sum)
-      iname = "L1 Norm"
-    }, lambda = {
-      index = log(x$fit$lambda)
-      iname = expression(paste("log ",lambda))
-    }, dev = {
-      index = x$fit$dev
-      iname = "Fraction Deviance Explained"
-    })
+  p <- dim(beta)[1]
+  which = nonzeroCoef(beta)
+  nwhich = length(which)
+  switch(nwhich + 1, `0` = {
+    warning("No plot produced since all coefficients zero")
+    return()
+  }, `1` = warning("1 or less nonzero coefficients; glmnet plot is not meaningful"))
+  xvar = match.arg(xvar)
+  switch(xvar, norm = {
+    index = apply(abs(beta), 2, sum)
+    iname = "L1 Norm"
+  }, lambda = {
+    index = log(x$fit$lambda)
+    iname = expression(paste("log ",lambda))
+  }, dev = {
+    index = x$fit$dev
+    iname = "Fraction Deviance Explained"
+  })
   #}
   #stability path
   cols <- rep(col.all,p)
@@ -125,10 +122,10 @@ plot.stabpath <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6,xvar=c("
   lwds <- rep(1,p)
   lwds[sel$stable] <- 2
   if(!class(x$fit)[1]=="multnet"){
-  par(mfrow=c(2,1))
-  matplot(y=t(beta), x=index
-          ,type="l",col=cols,lwd=lwds,lty=1,ylab=expression(paste(hat(beta)[i]))
-          ,xlab=iname,main="Penalization Path",cex.lab=1,cex.axis=1,las=1,...)
+    par(mfrow=c(2,1))
+    matplot(y=t(beta), x=index
+            ,type="l",col=cols,lwd=lwds,lty=1,ylab=expression(paste(hat(beta)[i]))
+            ,xlab=iname,main="Penalization Path",cex.lab=1,cex.axis=1,las=1,...)
   }
   matplot(y=as.matrix(t(x$x)), x=index
           ,type="l",col=cols,lwd=lwds,lty=1,ylab=expression(paste(hat(Pi)))

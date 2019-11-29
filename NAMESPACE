@@ -20,3 +20,9 @@ S3method("predictProb","coxnet")
 S3method("summary","intsearch")
 S3method("plot","sum.intsearch")
 S3method("coef","sum.intsearch")
+
+importFrom("grDevices", "dev.off", "gray.colors", "pdf")
+importFrom("graphics", "abline", "grid", "legend", "lines", "matplot",
+     "par", "plot", "polygon", "text", "axis")
+importFrom("stats", "approx", "coef", "predict", "quantile", "runif",
+     "sd")
