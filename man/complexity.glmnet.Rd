@@ -26,19 +26,19 @@ evaluation with package \code{peperr}.
 \references{
    Friedman, J., Hastie, T. and Tibshirani, R. (2008)
   \emph{Regularization Paths for Generalized Linear Models via Coordinate
-    Descent},   \url{http://www.stanford.edu/~hastie/Papers/glmnet.pdf}\cr
+    Descent},   \url{https://web.stanford.edu/~hastie/Papers/glmnet.pdf}\cr
   \emph{Journal of Statistical Software, Vol. 33(1), 1-22 Feb 2010}\cr
-  \url{http://www.jstatsoft.org/v33/i01/}\cr
+  \url{https://www.jstatsoft.org/v33/i01/}\cr
   Simon, N., Friedman, J., Hastie, T., Tibshirani, R. (2011)
   \emph{Regularization Paths for Cox's Proportional Hazards Model via
     Coordinate Descent, Journal of Statistical Software, Vol. 39(5)
     1-13}\cr
-  \url{http://www.jstatsoft.org/v39/i05/}\cr
+  \url{https://www.jstatsoft.org/v39/i05/}\cr
    Porzelius, C., Binder, H., and Schumacher, M. (2009) 
    \emph{Parallelized prediction error estimation for evaluation of high-dimensional models,
    Bioinformatics, Vol. 25(6), 827-829.}\cr
 Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
-\url{http://www.jstatsoft.org/v62/i05/}
+\url{https://www.jstatsoft.org/v62/i05/}
 }
 
 \author{

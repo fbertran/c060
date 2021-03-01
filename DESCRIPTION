@@ -1,8 +1,8 @@
 Package: c060
-Version: 0.2-5
-Date: 2019-11-29
+Version: 0.2-6
+Date: 2021-02-27
 Author: Martin Sill, Thomas Hielscher, Manuela Zucknick, Natalia Becker.
-Maintainer: Martin Sill <m.sill@dkfz.de>
+Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Title: Extended Inference for Lasso and Elastic-Net Regularized Cox and
         Generalized Linear Models
 Depends:
@@ -12,10 +12,7 @@ Suggests:
 Description: The c060 package provides additional functions to perform stability selection, model validation and parameter tuning for glmnet models.
 License: GPL-2
 LazyLoad: yes
-Repository: CRAN
-Repository/R-Forge/Project: c060
-Repository/R-Forge/Revision: 193
-Repository/R-Forge/DateTimeStamp: 2019-11-26 11:36:43
-Date/Publication: 2019-11-29 19:50:10 UTC
 NeedsCompilation: no
-Packaged: 2019-11-26 11:50:10 UTC; rforge
+Packaged: 2021-02-27 01:55:44 UTC; fbertran
+Repository: CRAN
+Date/Publication: 2021-03-01 14:00:06 UTC
