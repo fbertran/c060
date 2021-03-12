@@ -1,0 +1,28 @@
+import(glmnet, survival, parallel,  peperr, penalizedSVM, lattice, mlegp, tgp)
+
+export(stabpath,
+       stabsel,
+       aggregation.auc,
+       complexity.glmnet,
+       fit.glmnet,
+       Plot.peperr.curves,
+       epsgo,
+       tune.glmnet.interval,
+       balancedFolds,
+       Plot.coef.glmnet
+       )
+
+S3method("print","stabpath")
+S3method("plot","stabpath")
+S3method("PLL","coxnet")
+S3method("predictProb","glmnet")
+S3method("predictProb","coxnet")
+S3method("summary","intsearch")
+S3method("plot","sum.intsearch")
+S3method("coef","sum.intsearch")
+
+importFrom("grDevices", "dev.off", "gray.colors", "pdf")
+importFrom("graphics", "abline", "grid", "legend", "lines", "matplot",
+     "par", "plot", "polygon", "text", "axis")
+importFrom("stats", "approx", "coef", "predict", "quantile", "runif",
+     "sd")
