@@ -1,0 +1,7 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^old_files*
+^\.gitignore$
+^.DS_Store
+^src/.DS_Store
+^.git
