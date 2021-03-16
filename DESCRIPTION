@@ -1,6 +1,6 @@
 Package: c060
-Version: 0.2-6
-Date: 2021-02-27
+Version: 0.2-7
+Date: 2021-03-16
 Author: Martin Sill, Thomas Hielscher, Manuela Zucknick, Natalia Becker.
 Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Title: Extended Inference for Lasso and Elastic-Net Regularized Cox and
@@ -13,3 +13,5 @@ Description: The c060 package provides additional functions to perform stability
 License: GPL-2
 LazyLoad: yes
 NeedsCompilation: no
+URL: https://github.com/fbertran/c060/, https://fbertran.github.io/c060/
+BugReports: https://github.com/fbertran/c060/issues/

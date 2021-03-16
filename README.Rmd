@@ -1,6 +1,13 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # c060
 
@@ -26,15 +33,13 @@ The goal of the `c060` package is to provide additional functions to perform sta
 
 You can install the released version of c060 from [CRAN](https://CRAN.R-project.org) with:
 
-
-```r
+```{r, eval = FALSE}
 install.packages("c060")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
 
-
-```r
+```{r, eval = FALSE}
 install.packages("devtools")
 devtools::install_github("fbertran/c060")
 ```
