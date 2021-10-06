@@ -62,7 +62,7 @@ Martin Sill \
 \references{
 Meinshausen N. and Buehlmann P. (2010), Stability Selection, Journal of the Royal Statistical Society: Series B (Statistical Methodology) Volume 72, Issue 4, pages 417-473.\cr
 Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
-\url{https://www.jstatsoft.org/v62/i05/}
+\doi{10.18637/jss.v062.i05}
 }
 \seealso{ \code{\link{stabsel},\link{stabpath}}
 }

@@ -1,3 +1,7 @@
+# c060 0.2-8
+
+* As recommended, updated all links to the JSS.
+
 # c060 0.2-7
 
 * Added github actions, pkgdown site, readme.Rmd and package logo.

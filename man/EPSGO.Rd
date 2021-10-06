@@ -85,7 +85,7 @@ machines in classification and regression via model-based global optimization"
 \emph{In Proc. Int. Joint Conf. Neural Networks,  1431-1438 }.\cr
 
 Sill M., Hielscher T., Becker N. and Zucknick M. (2014), \emph{c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models, Journal of Statistical Software, Volume 62(5), pages 1--22.}
-\url{https://www.jstatsoft.org/v62/i05/}
+\doi{10.18637/jss.v062.i05}
 }
 
 \examples{

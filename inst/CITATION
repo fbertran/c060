@@ -11,11 +11,11 @@ citEntry(entry = "Article",
   volume       = "62",
   number       = "5",
   pages        = "1--22",
-  url          = "https://www.jstatsoft.org/v62/i05/",
+  doi          = "10.18637/jss.v062.i05",
 
   textVersion  =
   paste("Martin Sill, Thomas Hielscher, Natalia Becker, Manuela Zucknick (2014).",
         "c060: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models.",
         "Journal of Statistical Software, 62(5), 1-22.",
-        "URL https://www.jstatsoft.org/v62/i05/.")
+        "doi: 10.18637/jss.v062.i05.")
 )
