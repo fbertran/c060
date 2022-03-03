@@ -36,6 +36,7 @@ fit.glmnet <- function (response, x, cplx, ...)
           res$linear.predictor  <- as.numeric(predict(res, newx=data.matrix(x), type="link"))
           res$response          <- response
     }
+    class(res) <- class(res)[1]
     res
 }
 

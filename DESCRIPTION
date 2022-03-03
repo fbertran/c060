@@ -1,6 +1,6 @@
 Package: c060
-Version: 0.2-8
-Date: 2021-10-06
+Version: 0.2-9
+Date: 2022-03-03
 Author: Martin Sill, Thomas Hielscher, Manuela Zucknick, Natalia Becker.
 Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Title: Extended Inference for Lasso and Elastic-Net Regularized Cox and
