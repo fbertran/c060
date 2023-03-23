@@ -32,7 +32,7 @@ fit.glmnet <- function (response, x, cplx, ...)
     res <- NULL
     tryerr <- try(res <- glmnet(y = response, x = data.matrix(x), lambda = cplx,  ...), silent=TRUE)
 
-    if(class(tryerr) != 'try-error' && "coxnet" %in% class(res)) {
+    if(!is(tryerr, 'try-error') && is(res,"coxnet")) {
           res$linear.predictor  <- as.numeric(predict(res, newx=data.matrix(x), type="link"))
           res$response          <- response
     }
@@ -46,7 +46,7 @@ complexity.glmnet <- function (response, x, full.data, ...)
     lambda <- NULL
     tryerr <- try(cv <- cv.glmnet(y = response, x = data.matrix(x),  ...), silent=TRUE)
     
-    if(class(tryerr) != 'try-error'){
+    if(!is(tryerr, 'try-error')){
       lambda <-cv$lambda.min
     }    
     lambda
@@ -85,10 +85,10 @@ aggregation.misclass <- function (full.data = NULL, response, x, model, cplx = N
     if ("glmnet" %in% class(model)) {
         probs <- as.numeric(predict(model, newx = data.matrix(x), type="response", ...))
     }
-    else if (class(model)[1] == "penfit") {
+    else if (is(model[1],"penfit")) {
       probs <- predict(model, data = data, penalized = x, ...)
     }
-    else if (class(model)[1]=="glm") {
+    else if (is(model[1],"glm")) {
         probs <- predict(model, newdata = data, type="response", ...)
     }
     else {
@@ -115,10 +115,10 @@ aggregation.brier <- function (full.data = NULL, response, x, model, cplx = NULL
     if ("glmnet" %in% class(model)) {
         probs <- as.numeric(predict(model, newx = data.matrix(x), type="response", ...))
     }
-    else if (class(model)[1] == "penfit") {
+    else if (is(model[1],"penfit")) {
       probs <- predict(model, data = data, penalized = x, ...)
     }
-    else if (class(model)[1]=="glm") {
+    else if (is(model[1],"glm")) {
         probs <- predict(model, newdata = data, type="response", ...)
     }    
     else {
@@ -144,10 +144,10 @@ aggregation.auc <- function (full.data = NULL, response, x, model, cplx = NULL,
     if ("glmnet" %in% class(model)) {
         probs <- as.numeric(predict(model, newx = data.matrix(x), type="response", ...))
     }
-    else if (class(model)[1] == "penfit") {
+    else if (is(model[1],"penfit")) {
       probs <- predict(model, data = data, penalized = x, ...)
     }    
-    else if (class(model)[1]=="glm") {
+    else if (is(model[1],"glm")) {
         probs <- predict(model, newdata = data, type="response", ...)
     }    
     else {

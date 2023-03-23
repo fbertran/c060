@@ -1,11 +1,11 @@
 citHeader("To cite c060 in publications use:")
 
-citEntry(entry = "Article",
+bibentry(bibtype = "Article",
   title        = "{c060}: Extended Inference with Lasso and Elastic-Net Regularized Cox and Generalized Linear Models",
-  author       = personList(as.person("Martin Sill"),
-                   as.person("Thomas Hielscher"),
-                   as.person("Natalia Becker"),
-                   as.person("Manuela Zucknick")),
+  author       = c(person(given="Martin", family="Sill"),
+                   person(given="Thomas", family="Hielscher"),
+                   person(given="Natalia", family="Becker"),
+                   person(given="Manuela", family="Zucknick")),
   journal      = "Journal of Statistical Software",
   year         = "2014",
   volume       = "62",

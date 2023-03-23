@@ -1,7 +1,7 @@
 stabpath <- function(y,x,size=0.632,steps=100,weakness=1,mc.cores=getOption("mc.cores", 2L),...){
   fit <- glmnet(x,y,...)
-  if(class(fit)[1]=="multnet"|class(fit)[1]=="lognet") y <- as.factor(y)
-  #if(class(fit)[1]=="lognet") y <- as.logical(y) 
+  if(is(fit[1],"multnet")|is(fit[1],"lognet")) y <- as.factor(y)
+  #if(is(fit[1],"lognet")) y <- as.logical(y) 
   p <- ncol(x)
   #draw subsets
   subsets <- sapply(1:steps,function(v){sample(1:nrow(x),nrow(x)*size)})
@@ -36,7 +36,7 @@ stabpath <- function(y,x,size=0.632,steps=100,weakness=1,mc.cores=getOption("mc.
 
 #internal function used by lapply 
 glmnet.subset <- function(index,subsets,x,y,lambda,weakness,p,...){
-  if(length(dim(y))==2|class(y)=="Surv"){
+  if(length(dim(y))==2|is(y,"Surv")){
     glmnet(x[subsets[,index],],y[subsets[,index],],lambda=lambda
            ,penalty.factor= 1/runif(p,weakness,1),...)$beta!=0
   }else{
@@ -58,7 +58,7 @@ glmnet.subset <- function(index,subsets,x,y,lambda,weakness,p,...){
 #performs error control and returns estimated set of stable variables and corresponding lambda
 stabsel <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6){
   if(pi_thr <= 0.5 | pi_thr >= 1) stop("pi_thr needs to be > 0.5 and < 1!")
-  if(class(x$fit)[1]=="multnet"){
+  if(is(x$fit[1],"multnet")){
     p <- dim(x$fit$beta[[1]])[1]
   }else{
     p <- dim(x$fit$beta)[1]
@@ -92,7 +92,7 @@ print.stabpath <- function(x,...){
 plot.stabpath <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6,xvar=c("lambda", "norm", "dev")
                           , col.all="black", col.sel="red",...){
   sel <- stabsel(x,error,type,pi_thr)
-  if(class(x$fit)[1]=="multnet"){
+  if(is(x$fit[1],"multnet")){
     beta = as.matrix(Reduce("+",x$fit$beta))
   }else{
     beta = as.matrix(x$fit$beta)
@@ -121,7 +121,7 @@ plot.stabpath <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6,xvar=c("
   cols[sel$stable] <- col.sel
   lwds <- rep(1,p)
   lwds[sel$stable] <- 2
-  if(!class(x$fit)[1]=="multnet"){
+  if(!is(x$fit[1],"multnet")){
     par(mfrow=c(2,1))
     matplot(y=t(beta), x=index
             ,type="l",col=cols,lwd=lwds,lty=1,ylab=expression(paste(hat(beta)[i]))

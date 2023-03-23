@@ -1,3 +1,7 @@
+# c060 0.3-0
+
+* Code update to get rid of checks notes with r-devel
+
 # c060 0.2-9
 
 * Code update

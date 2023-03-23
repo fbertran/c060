@@ -1,5 +1,8 @@
 import(glmnet, survival, parallel,  peperr, penalizedSVM, lattice, mlegp, tgp)
 
+importFrom("penalized","profL1")
+importFrom("penalized","penalized")
+
 export(stabpath,
        stabsel,
        aggregation.auc,
@@ -21,6 +24,7 @@ S3method("summary","intsearch")
 S3method("plot","sum.intsearch")
 S3method("coef","sum.intsearch")
 
+importFrom("methods", "is")
 importFrom("grDevices", "dev.off", "gray.colors", "pdf")
 importFrom("graphics", "abline", "grid", "legend", "lines", "matplot",
      "par", "plot", "polygon", "text", "axis")
