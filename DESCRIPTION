@@ -1,17 +1,37 @@
 Package: c060
-Version: 0.3-0
-Date: 2023-03-23
-Author: Martin Sill, Thomas Hielscher, Manuela Zucknick, Natalia Becker.
-Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
+Version: 0.4-0
+Date: 2025-09-09
+Authors@R: c(person(given = "Martin",
+                        family = "Sill",
+                        role = "aut"),
+                 person(given = "Thomas",
+                        family = "Hielscher",
+                        role = "aut"),
+                 person(given = "Manuela",
+                        family = "Zucknick",
+                        role = "aut"),
+                 person(given = "Natalia",
+                        family = "Becker",
+                        role = "aut"),
+                 person(given = "Frederic",
+                        family = "Bertrand",
+                        role = "cre",
+                        email = "frederic.bertrand@lecnam.net",
+                        comment = c(ORCID = "0000-0002-0837-8281"))
+              )
+Maintainer: Frederic Bertrand <frederic.bertrand@lecnam.net>
 Title: Extended Inference for Lasso and Elastic-Net Regularized Cox and
         Generalized Linear Models
 Depends:
-Imports: glmnet, survival, parallel, mlegp, tgp, peperr, penalized, 
+Imports: glmnet, survival, parallel, mlegp, tgp, pamr, peperr, penalized, 
          penalizedSVM, lattice, methods
-Suggests:
+Suggests: withr, testthat (>= 3.0.0)
 Description: The c060 package provides additional functions to perform stability selection, model validation and parameter tuning for glmnet models.
 License: GPL-2
 LazyLoad: yes
 NeedsCompilation: no
 URL: https://github.com/fbertran/c060/, https://fbertran.github.io/c060/
 BugReports: https://github.com/fbertran/c060/issues/
+Config/testthat/edition: 3
+RoxygenNote: 7.3.3
+Encoding: UTF-8

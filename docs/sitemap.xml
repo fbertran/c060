@@ -1,72 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/EPSGO.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PLL.coxnet.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Plot.coef.glmnet.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Plot.peperr.curves.html</loc>
-  </url>
-  <url>
-    <loc>/reference/aggregation.auc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/balancedFolds.html</loc>
-  </url>
-  <url>
-    <loc>/reference/coef.intsearch.html</loc>
-  </url>
-  <url>
-    <loc>/reference/complexity.glmnet.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fit.glmnet.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot.stabpath.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot.summary.int.html</loc>
-  </url>
-  <url>
-    <loc>/reference/predictProb.coxnet.html</loc>
-  </url>
-  <url>
-    <loc>/reference/predictProb.glmnet.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stabpath.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stabsel.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summary.intsearch.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tune.glmnet.interval.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://fbertran.github.io/c060/404.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/LICENSE-text.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/authors.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/index.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/news/index.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/EPSGO.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/PLL.coxnet.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/Plot.coef.glmnet.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/Plot.peperr.curves.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/aggregation.auc.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/balancedFolds.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/c060-package.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/coef.sum.intsearch.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/complexity.glmnet.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/fit.glmnet.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/index.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/plot.stabpath.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/plot.sum.intsearc.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/predictProb.coxnet.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/stabpath.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/stabsel.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/summary.intsearch.html</loc></url>
+<url><loc>https://fbertran.github.io/c060/reference/tune.glmnet.interval.html</loc></url>
 </urlset>
+

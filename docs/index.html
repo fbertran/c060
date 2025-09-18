@@ -4,78 +4,52 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Extended Inference for Lasso and Elastic-Net Regularized Cox and
-        Generalized Linear Models • c060</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
-<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Extended Inference for Lasso and Elastic-Net Regularized Cox and
-        Generalized Linear Models">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extended Inference for Lasso and Elastic-Net Regularized Cox and Generalized Linear Models • c060</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" sizes="any" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
+<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Extended Inference for Lasso and Elastic-Net Regularized Cox and Generalized Linear Models">
+<meta name="description" content="The c060 package provides additional functions to perform stability selection, model validation and parameter tuning for glmnet models.">
 <meta property="og:description" content="The c060 package provides additional functions to perform stability selection, model validation and parameter tuning for glmnet models.">
-<meta property="og:image" content="/logo.png">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
-    
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
-    <div class="container template-home">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">c060</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3-0</span>
-      </span>
-    </div>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="reference/index.html">Reference</a>
-</li>
-<li>
-  <a href="news/index.html">Changelog</a>
-</li>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="inverse" aria-label="Site navigation"><div class="container">
+
+    <a class="navbar-brand me-2" href="index.html">c060</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4-0</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="active nav-item"><a class="nav-link" href="index.html"><span class="fa fa-home"></span></a></li>
+<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/fbertran/c060/" class="external-link">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/fbertran/c060"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
-
-      
-
-      </header><div class="row">
-  <div class="contents col-md-9">
-
-<div class="section level1">
+</nav><div class="container template-home">
+<div class="row">
+  <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="c060">c060<a class="anchor" aria-label="anchor" href="#c060"></a>
 </h1></div>
 </div>
@@ -85,6 +59,7 @@
 <div class="section level2">
 <h2 id="maintainer-f-bertrand">Maintainer F. Bertrand<a class="anchor" aria-label="anchor" href="#maintainer-f-bertrand"></a>
 </h2>
+<p><a href="https://doi.org/10.32614/CRAN.package.c060" class="external-link uri">https://doi.org/10.32614/CRAN.package.c060</a></p>
 <!-- badges: start -->
 
 <p>The goal of the <code>c060</code> package is to provide additional functions to perform stability selection, model validation and parameter tuning for glmnet models.</p>
@@ -101,11 +76,1062 @@
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"fbertran/c060"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
+<div class="section level1">
+<h1 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h1>
+<div class="section level2">
+<h2 id="gaussian-stability-selection">Gaussian Stability Selection<a class="anchor" aria-label="anchor" href="#gaussian-stability-selection"></a>
+</h2>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
+<span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">1000</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,<span class="fl">100</span>,<span class="fl">1000</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.1</span>,<span class="fl">990</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/stabsel.html">stabsel</a></span><span class="op">(</span><span class="va">res</span>,error<span class="op">=</span><span class="fl">0.05</span>,type<span class="op">=</span><span class="st">"pfer"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; $stable</span></span>
+<span><span class="co">#&gt; integer(0)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $lambda</span></span>
+<span><span class="co">#&gt; [1] 2.02235</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $lpos</span></span>
+<span><span class="co">#&gt; [1] 8</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $error</span></span>
+<span><span class="co">#&gt; [1] 0.05</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $type</span></span>
+<span><span class="co">#&gt; [1] "pfer"</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="gaussian-stability-paths">Gaussian Stability Paths<a class="anchor" aria-label="anchor" href="#gaussian-stability-paths"></a>
+</h2>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">1000</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,<span class="fl">100</span>,<span class="fl">1000</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.1</span>,<span class="fl">990</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="100%"><p class="caption">
+plot of chunk unnamed-chunk-5
+</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="binomial-stability-paths">Binomial Stability Paths<a class="anchor" aria-label="anchor" href="#binomial-stability-paths"></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,<span class="fl">100</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"binomial"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="100%"><p class="caption">
+plot of chunk unnamed-chunk-6
+</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="multinomial-stability-paths">Multinomial Stability Paths<a class="anchor" aria-label="anchor" href="#multinomial-stability-paths"></a>
+</h2>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,<span class="fl">100</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"multinomial"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in mclapply(1:steps, mc.cores = mc.cores, glmnet.subset, subsets, :</span></span>
+<span><span class="co">#&gt; all scheduled cores encountered errors in user code</span></span>
+<span><span class="co">#&gt; Error in res[[1]]: subscript out of bounds</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="100%"><p class="caption">
+plot of chunk unnamed-chunk-7
+</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="poisson-stability-paths">Poisson Stability Paths<a class="anchor" aria-label="anchor" href="#poisson-stability-paths"></a>
+</h2>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">N</span><span class="op">=</span><span class="fl">100</span>; <span class="va">p</span><span class="op">=</span><span class="fl">1000</span></span>
+<span><span class="va">nzc</span><span class="op">=</span><span class="fl">5</span></span>
+<span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">*</span><span class="va">p</span><span class="op">)</span>,<span class="va">N</span>,<span class="va">p</span><span class="op">)</span></span>
+<span><span class="va">beta</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span></span>
+<span><span class="va">f</span> <span class="op">=</span> <span class="va">x</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="va">beta</span></span>
+<span><span class="va">mu</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span>
+<span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html" class="external-link">rpois</a></span><span class="op">(</span><span class="va">N</span>,<span class="va">mu</span><span class="op">)</span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"poisson"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="100%"><p class="caption">
+plot of chunk unnamed-chunk-8
+</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="cox-stability-paths">Cox Stability Paths<a class="anchor" aria-label="anchor" href="#cox-stability-paths"></a>
+</h2>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">10101</span><span class="op">)</span></span>
+<span><span class="va">N</span><span class="op">=</span><span class="fl">100</span>;<span class="va">p</span><span class="op">=</span><span class="fl">1000</span></span>
+<span><span class="va">nzc</span><span class="op">=</span><span class="va">p</span><span class="op">/</span><span class="fl">3</span></span>
+<span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">*</span><span class="va">p</span><span class="op">)</span>,<span class="va">N</span>,<span class="va">p</span><span class="op">)</span></span>
+<span><span class="va">beta</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span></span>
+<span><span class="va">fx</span><span class="op">=</span><span class="va">x</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="va">beta</span><span class="op">/</span><span class="fl">3</span></span>
+<span><span class="va">hx</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="va">fx</span><span class="op">)</span></span>
+<span><span class="va">ty</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="va">N</span>,<span class="va">hx</span><span class="op">)</span></span>
+<span><span class="va">tcens</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html" class="external-link">rbinom</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">N</span>,prob<span class="op">=</span><span class="fl">.3</span>,size<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>time<span class="op">=</span><span class="va">ty</span>,status<span class="op">=</span><span class="fl">1</span><span class="op">-</span><span class="va">tcens</span><span class="op">)</span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"cox"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="100%"><p class="caption">
+plot of chunk unnamed-chunk-9
+</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="example-from-glmnet-package">Example from glmnet package<a class="anchor" aria-label="anchor" href="#example-from-glmnet-package"></a>
+</h2>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">10101</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://glmnet.stanford.edu" class="external-link">glmnet</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fbertran/peperr/" class="external-link">peperr</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">N</span><span class="op">=</span><span class="fl">1000</span>;<span class="va">p</span><span class="op">=</span><span class="fl">30</span></span>
+<span><span class="va">nzc</span><span class="op">=</span><span class="va">p</span><span class="op">/</span><span class="fl">3</span></span>
+<span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">N</span><span class="op">*</span><span class="va">p</span><span class="op">)</span>,<span class="va">N</span>,<span class="va">p</span><span class="op">)</span></span>
+<span><span class="va">beta</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span></span>
+<span><span class="va">fx</span><span class="op">=</span><span class="va">x</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="va">beta</span><span class="op">/</span><span class="fl">3</span></span>
+<span><span class="va">hx</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="va">fx</span><span class="op">)</span></span>
+<span><span class="va">ty</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="va">N</span>,<span class="va">hx</span><span class="op">)</span></span>
+<span><span class="va">tcens</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html" class="external-link">rbinom</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">N</span>,prob<span class="op">=</span><span class="fl">.3</span>,size<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="co"># censoring indicator</span></span>
+<span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">ty</span>,<span class="fl">1</span><span class="op">-</span><span class="va">tcens</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div class="section level1">
+<h1 id="epsgo">EPSGO<a class="anchor" aria-label="anchor" href="#epsgo"></a>
+</h1>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1010</span><span class="op">)</span></span>
+<span><span class="va">n</span><span class="op">=</span><span class="fl">1000</span>;<span class="va">p</span><span class="op">=</span><span class="fl">100</span></span>
+<span><span class="va">nzc</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">trunc</a></span><span class="op">(</span><span class="va">p</span><span class="op">/</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="va">p</span><span class="op">)</span>,<span class="va">n</span>,<span class="va">p</span><span class="op">)</span></span>
+<span><span class="va">beta</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span></span>
+<span><span class="va">fx</span><span class="op">=</span> <span class="va">x</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="va">nzc</span><span class="op">)</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="va">beta</span></span>
+<span><span class="va">eps</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">*</span><span class="fl">5</span></span>
+<span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/drop.html" class="external-link">drop</a></span><span class="op">(</span><span class="va">fx</span><span class="op">+</span><span class="va">eps</span><span class="op">)</span></span>
+<span><span class="va">px</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="va">fx</span><span class="op">)</span></span>
+<span><span class="va">px</span><span class="op">=</span><span class="va">px</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="va">px</span><span class="op">)</span></span>
+<span><span class="va">ly</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html" class="external-link">rbinom</a></span><span class="op">(</span>n<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">px</span><span class="op">)</span>,prob<span class="op">=</span><span class="va">px</span>,size<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1011</span><span class="op">)</span></span></code></pre></div>
+<div class="section level2">
+<h2 id="y---binomial">y - binomial<a class="anchor" aria-label="anchor" href="#y---binomial"></a>
+</h2>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y.classes</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">y</span><span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span>,<span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
+<span><span class="va">nfolds</span> <span class="op">=</span> <span class="fl">10</span></span>
+<span><span class="va">foldid</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/balancedFolds.html">balancedFolds</a></span><span class="op">(</span>class.column.factor<span class="op">=</span><span class="va">y.classes</span>, cross.outer<span class="op">=</span><span class="va">nfolds</span><span class="op">)</span></span>
+<span><span class="co">#&gt; 121 </span></span>
+<span><span class="co">#&gt; 2 </span></span>
+<span><span class="co">#&gt; 3 </span></span>
+<span><span class="co">#&gt; 4 </span></span>
+<span><span class="co">#&gt; 5 </span></span>
+<span><span class="co">#&gt; 6 </span></span>
+<span><span class="co">#&gt; 7 </span></span>
+<span><span class="co">#&gt; 8 </span></span>
+<span><span class="co">#&gt; 9 </span></span>
+<span><span class="co">#&gt; 10</span></span>
+<span><span class="va">bounds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>alpha<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">bounds</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"lower"</span>,<span class="st">"upper"</span><span class="op">)</span></span>
+<span> </span>
+<span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/EPSGO.html">EPSGO</a></span><span class="op">(</span>Q.func<span class="op">=</span><span class="st">"tune.glmnet.interval"</span>, </span>
+<span>             bounds<span class="op">=</span><span class="va">bounds</span>, </span>
+<span>             parms.coding<span class="op">=</span><span class="st">"none"</span>, </span>
+<span>             seed <span class="op">=</span> <span class="fl">1234</span>, </span>
+<span>             show<span class="op">=</span><span class="st">"final"</span>,</span>
+<span>             fminlower <span class="op">=</span> <span class="op">-</span><span class="fl">100</span>,</span>
+<span>             x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y.classes</span>, family <span class="op">=</span> <span class="st">"binomial"</span>, </span>
+<span>             foldid <span class="op">=</span> <span class="va">foldid</span>,</span>
+<span>             my.mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">4</span><span class="op">)</span>,</span>
+<span>             type.min <span class="op">=</span> <span class="st">"lambda.1se"</span>,</span>
+<span>             type.measure <span class="op">=</span> <span class="st">"mse"</span>,</span>
+<span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.04184</span></span>
+<span><span class="co">#&gt;     Xtrain    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;      alpha</span></span>
+<span><span class="co">#&gt; [1,]     0</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.01859</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.03437</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.02538</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
+<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.00565</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
+<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
+<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.02255</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
+<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
+<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
+<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.00881</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
+<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
+<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
+<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
+<span><span class="co">#&gt; 28 0.02255 0.4518852</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.01515</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
+<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
+<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
+<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
+<span><span class="co">#&gt; 28 0.02255 0.4518852</span></span>
+<span><span class="co">#&gt; 29 0.00881 0.4553102</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span></code></pre></div>
+<div class="figure">
+<img src="reference/figures/README-unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13" width="100%"><p class="caption">
+plot of chunk unnamed-chunk-13
+</p>
+</div>
+<pre><code><span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.00258</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
+<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
+<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
+<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
+<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
+<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
+<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
+<span><span class="co">#&gt; 28 0.02255 0.4518852</span></span>
+<span><span class="co">#&gt; 29 0.00881 0.4553102</span></span>
+<span><span class="co">#&gt; 30 0.01515 0.4539218</span></span>
+<span><span class="co">#&gt; [1] "No changes in the last 10 iterations, break iterations"</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span><span class="co">#&gt;             Length Class      Mode</span></span>
+<span><span class="co">#&gt; fmin         1     -none-     numeric</span></span>
+<span><span class="co">#&gt; xmin         1     -none-     numeric</span></span>
+<span><span class="co">#&gt; iter         1     -none-     numeric</span></span>
+<span><span class="co">#&gt; neval        1     -none-     numeric</span></span>
+<span><span class="co">#&gt; maxevals     1     -none-     numeric</span></span>
+<span><span class="co">#&gt; seed         1     -none-     numeric</span></span>
+<span><span class="co">#&gt; bounds       2     -none-     numeric</span></span>
+<span><span class="co">#&gt; Q.func       1     -none-     character</span></span>
+<span><span class="co">#&gt; points.fmin  2     data.frame list</span></span>
+<span><span class="co">#&gt; Xtrain      31     -none-     numeric</span></span>
+<span><span class="co">#&gt; Ytrain      31     -none-     numeric</span></span>
+<span><span class="co">#&gt; gp.seed     10     -none-     numeric</span></span>
+<span><span class="co">#&gt; model.list  31     -none-     list</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="y---multinomial-low---low-25-middle---2575-quantiles-high---larger-75">y - multinomial: low - low 25%, middle - (25,75)-quantiles, high - larger 75%.<a class="anchor" aria-label="anchor" href="#y---multinomial-low---low-25-middle---2575-quantiles-high---larger-75"></a>
+</h2>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y.classes</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">y</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">y</span>,<span class="fl">0.25</span><span class="op">)</span>,<span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">y</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">y</span>,<span class="fl">0.75</span><span class="op">)</span>,<span class="fl">3</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
+<span><span class="va">nfolds</span> <span class="op">=</span> <span class="fl">10</span></span>
+<span><span class="va">foldid</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/balancedFolds.html">balancedFolds</a></span><span class="op">(</span>class.column.factor<span class="op">=</span><span class="va">y.classes</span>, cross.outer<span class="op">=</span><span class="va">nfolds</span><span class="op">)</span></span>
+<span><span class="co">#&gt; 1231 </span></span>
+<span><span class="co">#&gt; 2 </span></span>
+<span><span class="co">#&gt; 3 </span></span>
+<span><span class="co">#&gt; 4 </span></span>
+<span><span class="co">#&gt; 5 </span></span>
+<span><span class="co">#&gt; 6 </span></span>
+<span><span class="co">#&gt; 7 </span></span>
+<span><span class="co">#&gt; 8 </span></span>
+<span><span class="co">#&gt; 9 </span></span>
+<span><span class="co">#&gt; 10</span></span>
+<span><span class="va">bounds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>alpha<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">bounds</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"lower"</span>,<span class="st">"upper"</span><span class="op">)</span></span>
+<span> </span>
+<span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/EPSGO.html">EPSGO</a></span><span class="op">(</span>Q.func<span class="op">=</span><span class="st">"tune.glmnet.interval"</span>, </span>
+<span>             bounds<span class="op">=</span><span class="va">bounds</span>, </span>
+<span>             parms.coding<span class="op">=</span><span class="st">"none"</span>, </span>
+<span>             seed <span class="op">=</span> <span class="fl">1234</span>, </span>
+<span>             show<span class="op">=</span><span class="st">"none"</span>,</span>
+<span>             fminlower <span class="op">=</span> <span class="op">-</span><span class="fl">100</span>,</span>
+<span>             x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y.classes</span>, family <span class="op">=</span> <span class="st">"multinomial"</span>, </span>
+<span>             foldid <span class="op">=</span> <span class="va">foldid</span>,</span>
+<span>             type.min <span class="op">=</span> <span class="st">"lambda.1se"</span>,</span>
+<span>             type.measure <span class="op">=</span> <span class="st">"mse"</span>,</span>
+<span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;       alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.0605</span></span>
+<span><span class="co">#&gt;     Xtrain    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.03825</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
+<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.07476</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
+<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
+<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;      alpha</span></span>
+<span><span class="co">#&gt; [1,]     0</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
+<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
+<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
+<span><span class="co">#&gt; 24 0.07476 0.5974274</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.02692</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
+<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
+<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
+<span><span class="co">#&gt; 24 0.07476 0.5974274</span></span>
+<span><span class="co">#&gt; 25 0.00000 0.6118007</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "the differences in functions between 2 last iterations is small, stop iterations"</span></span>
+<span><span class="co">#&gt; [1] "finished? TRUE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.02692</span></span>
+<span><span class="co">#&gt;      alpha    Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
+<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
+<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
+<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
+<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
+<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
+<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
+<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
+<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
+<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
+<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
+<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
+<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
+<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
+<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
+<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
+<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
+<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
+<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
+<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
+<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
+<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
+<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
+<span><span class="co">#&gt; 24 0.07476 0.5974274</span></span>
+<span><span class="co">#&gt; 25 0.00000 0.6118007</span></span>
+<span><span class="co">#&gt; 26 0.02692 0.6012652</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span><span class="co">#&gt;             Length Class      Mode     </span></span>
+<span><span class="co">#&gt; fmin         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; xmin         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; iter         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; neval        1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; maxevals     1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; seed         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; bounds       2     -none-     numeric  </span></span>
+<span><span class="co">#&gt; Q.func       1     -none-     character</span></span>
+<span><span class="co">#&gt; points.fmin  2     data.frame list     </span></span>
+<span><span class="co">#&gt; Xtrain      26     -none-     numeric  </span></span>
+<span><span class="co">#&gt; Ytrain      26     -none-     numeric  </span></span>
+<span><span class="co">#&gt; gp.seed      6     -none-     numeric  </span></span>
+<span><span class="co">#&gt; model.list  26     -none-     list</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="gaussian">Gaussian<a class="anchor" aria-label="anchor" href="#gaussian"></a>
+</h2>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
+<span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">1000</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,<span class="fl">100</span>,<span class="fl">1000</span><span class="op">)</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">]</span><span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.1</span>,<span class="fl">990</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">foldid</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,each<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/EPSGO.html">EPSGO</a></span><span class="op">(</span>Q.func<span class="op">=</span><span class="st">"tune.glmnet.interval"</span>, </span>
+<span>             bounds<span class="op">=</span><span class="va">bounds</span>, </span>
+<span>             parms.coding<span class="op">=</span><span class="st">"none"</span>, </span>
+<span>             seed <span class="op">=</span> <span class="fl">1234</span>, </span>
+<span>             show<span class="op">=</span><span class="st">"none"</span>,</span>
+<span>             fminlower <span class="op">=</span> <span class="op">-</span><span class="fl">100</span>,</span>
+<span>             x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y</span>, family <span class="op">=</span> <span class="st">"gaussian"</span>, </span>
+<span>             foldid <span class="op">=</span> <span class="va">foldid</span>,</span>
+<span>             type.min <span class="op">=</span> <span class="st">"lambda.1se"</span>,</span>
+<span>             type.measure <span class="op">=</span> <span class="st">"mse"</span>,</span>
+<span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;      alpha</span></span>
+<span><span class="co">#&gt; [1,]     1</span></span>
+<span><span class="co">#&gt;     Xtrain   Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
+<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
+<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
+<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
+<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
+<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
+<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
+<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
+<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
+<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
+<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
+<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
+<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
+<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
+<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
+<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
+<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
+<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
+<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
+<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
+<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.97776</span></span>
+<span><span class="co">#&gt;      alpha   Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
+<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
+<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
+<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
+<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
+<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
+<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
+<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
+<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
+<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
+<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
+<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
+<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
+<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
+<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
+<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
+<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
+<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
+<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
+<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
+<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
+<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.95773</span></span>
+<span><span class="co">#&gt;      alpha   Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
+<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
+<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
+<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
+<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
+<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
+<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
+<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
+<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
+<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
+<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
+<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
+<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
+<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
+<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
+<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
+<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
+<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
+<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
+<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
+<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
+<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
+<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.98756</span></span>
+<span><span class="co">#&gt;      alpha   Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
+<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
+<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
+<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
+<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
+<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
+<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
+<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
+<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
+<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
+<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
+<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
+<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
+<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
+<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
+<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
+<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
+<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
+<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
+<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
+<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
+<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
+<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
+<span><span class="co">#&gt; 24 0.95773 25.15577</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.80954</span></span>
+<span><span class="co">#&gt;      alpha   Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
+<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
+<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
+<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
+<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
+<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
+<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
+<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
+<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
+<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
+<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
+<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
+<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
+<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
+<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
+<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
+<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
+<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
+<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
+<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
+<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
+<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
+<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
+<span><span class="co">#&gt; 24 0.95773 25.15577</span></span>
+<span><span class="co">#&gt; 25 0.98756 25.10930</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; ...done</span></span>
+<span><span class="co">#&gt; [1] "the differences in functions between 2 last iterations is small, stop iterations"</span></span>
+<span><span class="co">#&gt; [1] "finished? TRUE"</span></span>
+<span><span class="co">#&gt; [1] "X"</span></span>
+<span><span class="co">#&gt;        alpha</span></span>
+<span><span class="co">#&gt; [1,] 0.80954</span></span>
+<span><span class="co">#&gt;      alpha   Ytrain</span></span>
+<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
+<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
+<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
+<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
+<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
+<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
+<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
+<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
+<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
+<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
+<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
+<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
+<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
+<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
+<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
+<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
+<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
+<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
+<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
+<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
+<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
+<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
+<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
+<span><span class="co">#&gt; 24 0.95773 25.15577</span></span>
+<span><span class="co">#&gt; 25 0.98756 25.10930</span></span>
+<span><span class="co">#&gt; 26 0.80954 25.42666</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span> </span>
+<span><span class="co">#&gt;             Length Class      Mode     </span></span>
+<span><span class="co">#&gt; fmin         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; xmin         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; iter         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; neval        1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; maxevals     1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; seed         1     -none-     numeric  </span></span>
+<span><span class="co">#&gt; bounds       2     -none-     numeric  </span></span>
+<span><span class="co">#&gt; Q.func       1     -none-     character</span></span>
+<span><span class="co">#&gt; points.fmin  2     data.frame list     </span></span>
+<span><span class="co">#&gt; Xtrain      26     -none-     numeric  </span></span>
+<span><span class="co">#&gt; Ytrain      26     -none-     numeric  </span></span>
+<span><span class="co">#&gt; gp.seed      6     -none-     numeric  </span></span>
+<span><span class="co">#&gt; model.list  26     -none-     list</span></span></code></pre></div>
+</div>
+</div>
 
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="links">
+  </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://cloud.r-project.org/package=c060" class="external-link">View on CRAN</a></li>
@@ -132,13 +1158,18 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Frederic Bertrand <br><small class="roles"> Maintainer </small>  </li>
+<li>Martin Sill <br><small class="roles"> Author </small>   </li>
+<li>Thomas Hielscher <br><small class="roles"> Author </small>   </li>
+<li>Manuela Zucknick <br><small class="roles"> Author </small>   </li>
+<li>Natalia Becker <br><small class="roles"> Author </small>   </li>
+<li>Frederic Bertrand <br><small class="roles"> Maintainer </small> <a href="https://orcid.org/0000-0002-0837-8281" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 </ul>
 </div>
 
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://doi.org/10.32614/CRAN.package.c060" class="external-link"><img src="https://img.shields.io/badge/doi-10.32614/CRAN.package.c060-blue.svg" alt="DOI"></a></li>
 <li><a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-stable-green.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://www.repostatus.org/#active" class="external-link"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a></li>
 <li><a href="https://github.com/fbertran/c060/actions" class="external-link"><img src="https://github.com/fbertran/c060/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
@@ -146,31 +1177,27 @@
 <li><a href="https://CRAN.R-project.org/package=c060" class="external-link"><img src="https://www.r-pkg.org/badges/version/c060" alt="CRAN status"></a></li>
 <li><a href="https://cran.r-project.org/package=c060" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/c060" alt="CRAN RStudio mirror downloads"></a></li>
 <li><a href="https://github.com/fbertran/c060" class="external-link"><img src="https://img.shields.io/github/stars/fbertran/c060?style=social" alt="GitHub Repo stars"></a></li>
-<li><a href="https://zenodo.org/badge/latestdoi/347140355" class="external-link"><img src="https://zenodo.org/badge/347140355.svg" alt="DOI"></a></li>
 </ul>
 </div>
 
-  </div>
+  </aside>
 </div>
 
 
-      <footer><div class="copyright">
-  <p></p>
-<p>Developed by Frederic Bertrand.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by Martin Sill, Thomas Hielscher, Manuela Zucknick, Natalia Becker, Frederic Bertrand.</p>
 </div>
 
-<div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
-  
 
 
-  
+
 
   </body>
 </html>

@@ -1,3 +1,15 @@
+# c060 0.4-0
+
+* Maintainer address updated
+* Added unit tests
+* Turned Rd files into Roxygen section in the .R files
+* Used Roxygen to create namespace
+* Added package doi
+
+# c060 0.3-1
+
+* Code update to get rid of checks notes with r-devel
+
 # c060 0.3-0
 
 * Code update to get rid of checks notes with r-devel

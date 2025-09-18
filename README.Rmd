@@ -15,8 +15,10 @@ knitr::opts_chunk$set(
 
 ## Maintainer F. Bertrand
 
+<https://doi.org/10.32614/CRAN.package.c060>
 
 <!-- badges: start -->
+[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.c060-blue.svg)](https://doi.org/10.32614/CRAN.package.c060)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/fbertran/c060/workflows/R-CMD-check/badge.svg)](https://github.com/fbertran/c060/actions)
@@ -24,7 +26,6 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/c060)](https://CRAN.R-project.org/package=c060)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/c060)](https://cran.r-project.org/package=c060)
 [![GitHub Repo stars](https://img.shields.io/github/stars/fbertran/c060?style=social)](https://github.com/fbertran/c060)
-[![DOI](https://zenodo.org/badge/347140355.svg)](https://zenodo.org/badge/latestdoi/347140355)
 <!-- badges: end -->
 
 The goal of the `c060` package is to provide additional functions to perform stability selection, model validation and parameter tuning for glmnet models.
@@ -43,3 +44,182 @@ And the development version from [GitHub](https://github.com/) with:
 install.packages("devtools")
 devtools::install_github("fbertran/c060")
 ```
+
+
+# Examples
+
+## Gaussian Stability Selection
+```{r}
+set.seed(1234)
+x=matrix(rnorm(100*1000,0,1),100,1000)
+y <- x[1:100,1:1000] %*% c(rep(2,5),rep(-2,5),rep(.1,990))
+res <- stabpath(y,x,weakness=1,mc.cores=2)
+stabsel(res,error=0.05,type="pfer")
+```
+
+## Gaussian Stability Paths
+```{r}
+set.seed(1234)
+x <- matrix(rnorm(100*1000,0,1),100,1000)
+y <- x[1:100,1:1000] %*% c(rep(2,5),rep(-2,5),rep(.1,990))
+res <- stabpath(y,x,weakness=1,mc.cores=2)
+plot(res)
+```
+
+## Binomial Stability Paths
+```{r}
+y=sample(1:2,100,replace=TRUE)
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="binomial")
+plot(res)
+```
+
+
+## Multinomial Stability Paths
+```{r}
+y=sample(1:4,100,replace=TRUE)
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="multinomial")
+plot(res)
+```
+
+
+## Poisson Stability Paths
+```{r}
+N=100; p=1000
+nzc=5
+x=matrix(rnorm(N*p),N,p)
+beta=rnorm(nzc)
+f = x[,seq(nzc)] %*% beta
+mu=exp(f)
+y=rpois(N,mu)
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="poisson")
+plot(res)
+```
+
+## Cox Stability Paths
+```{r}
+library(survival)
+set.seed(10101)
+N=100;p=1000
+nzc=p/3
+x=matrix(rnorm(N*p),N,p)
+beta=rnorm(nzc)
+fx=x[,seq(nzc)] %*% beta/3
+hx=exp(fx)
+ty=rexp(N,hx)
+tcens=rbinom(n=N,prob=.3,size=1)
+y=cbind(time=ty,status=1-tcens)
+res <- stabpath(y,x,weakness=1,mc.cores=2,family="cox")
+plot(res)
+```
+
+
+
+## Example from glmnet package
+```{r}
+set.seed(10101)
+library(glmnet)
+library(survival)
+library(peperr)
+```
+
+```{r}
+N=1000;p=30
+nzc=p/3
+x=matrix(rnorm(N*p),N,p)
+beta=rnorm(nzc)
+fx=x[,seq(nzc)] %*% beta/3
+hx=exp(fx)
+ty=rexp(N,hx)
+tcens=rbinom(n=N,prob=.3,size=1)# censoring indicator
+y=Surv(ty,1-tcens)
+```
+
+
+# EPSGO
+
+```{r}
+set.seed(1010)
+n=1000;p=100
+nzc=trunc(p/10)
+x=matrix(rnorm(n*p),n,p)
+beta=rnorm(nzc)
+fx= x[,seq(nzc)] %*% beta
+eps=rnorm(n)*5
+y=drop(fx+eps)
+px=exp(fx)
+px=px/(1+px)
+ly=rbinom(n=length(px),prob=px,size=1)
+set.seed(1011)
+```
+
+
+## y - binomial
+```{r, fig.keep='last'}
+y.classes<-ifelse(y>= median(y),1, 0)
+set.seed(1234)
+nfolds = 10
+foldid <- balancedFolds(class.column.factor=y.classes, cross.outer=nfolds)
+bounds <- t(data.frame(alpha=c(0, 1)))
+colnames(bounds)<-c("lower","upper")
+ 
+fit <- EPSGO(Q.func="tune.glmnet.interval", 
+             bounds=bounds, 
+             parms.coding="none", 
+             seed = 1234, 
+             show="final",
+             fminlower = -100,
+             x = x, y = y.classes, family = "binomial", 
+             foldid = foldid,
+             my.mfrow = c(4, 4),
+             type.min = "lambda.1se",
+             type.measure = "mse",
+             verbose = FALSE)
+summary(fit)
+```
+
+
+## y - multinomial: low - low 25%, middle - (25,75)-quantiles, high - larger 75%.
+```{r}
+y.classes<-ifelse(y <= quantile(y,0.25),1, ifelse(y >= quantile(y,0.75),3, 2))
+set.seed(1234)
+nfolds = 10
+foldid <- balancedFolds(class.column.factor=y.classes, cross.outer=nfolds)
+bounds <- t(data.frame(alpha=c(0, 1)))
+colnames(bounds)<-c("lower","upper")
+ 
+fit <- EPSGO(Q.func="tune.glmnet.interval", 
+             bounds=bounds, 
+             parms.coding="none", 
+             seed = 1234, 
+             show="none",
+             fminlower = -100,
+             x = x, y = y.classes, family = "multinomial", 
+             foldid = foldid,
+             type.min = "lambda.1se",
+             type.measure = "mse",
+             verbose = FALSE)
+summary(fit)
+```
+
+## Gaussian
+```{r}
+set.seed(1234)
+x=matrix(rnorm(100*1000,0,1),100,1000)
+y <- x[1:100,1:1000]%*%c(rep(2,5),rep(-2,5),rep(.1,990))
+
+foldid <- rep(1:10,each=10)
+
+fit <- EPSGO(Q.func="tune.glmnet.interval", 
+             bounds=bounds, 
+             parms.coding="none", 
+             seed = 1234, 
+             show="none",
+             fminlower = -100,
+             x = x, y = y, family = "gaussian", 
+             foldid = foldid,
+             type.min = "lambda.1se",
+             type.measure = "mse",
+             verbose = FALSE)
+summary(fit) 
+```
+
