@@ -41,3 +41,4 @@ man/figures/Cairo-fa-asterisk.pdf
 ^\.github$
 
 
+\.DS_Store$
