@@ -517,13 +517,13 @@ Plot.peperr.curves <- function(x,at.risk=TRUE,allErrors=FALSE,  bootRuns=FALSE, 
        ylab = "Prediction error", main = "Prediction error curves", 
        ylim = c(0, max(perr(x), x$full.apparent, x$null.model) + 0.1))
   
-  if (length(x$sample.error) > 1 & bootRuns==TRUE) {
+  if (length(x$sample.error) > 1 && bootRuns == TRUE) {
     for (i in 1:(length(x$sample.error))) {
       lines(x$attribute, x$sample.error[[i]], type = "l", col = "light grey", lty = 1)
     }
   }
 
-  if (length(x$sample.error) > 1 & bootQuants==TRUE) {
+  if (length(x$sample.error) > 1 && bootQuants == TRUE) {
     boots  <- do.call("rbind",x$sample.error)
     quants <- apply(boots, 2, function(d) quantile(d, probs=c((1-bootQuants.level)/2,1 - (1-bootQuants.level)/2)))
     polygon(c(x$attribute,rev(x$attribute)),c(quants[1,],rev(quants[2,])), col="light grey", border="light grey")

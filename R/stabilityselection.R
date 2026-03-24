@@ -98,7 +98,7 @@
 #' @export stabpath
 stabpath <- function(y,x,size=0.632,steps=100,weakness=1,mc.cores=getOption("mc.cores", 2L),...){
   fit <- glmnet(x,y,...)
-  if(is(fit[1],"multnet")|is(fit[1],"lognet")) y <- as.factor(y)
+  if (is(fit[1], "multnet") || is(fit[1], "lognet")) y <- as.factor(y)
   #if(is(fit[1],"lognet")) y <- as.logical(y) 
   p <- ncol(x)
   #draw subsets
@@ -134,11 +134,11 @@ stabpath <- function(y,x,size=0.632,steps=100,weakness=1,mc.cores=getOption("mc.
 
 #internal function used by lapply 
 glmnet.subset <- function(index,subsets,x,y,lambda,weakness,p,...){
-  if(length(dim(y))==2|is(y,"Surv")){
+  if (length(dim(y)) == 2 || is(y, "Surv")) {
     glmnet(x[subsets[,index],],y[subsets[,index],],lambda=lambda
            ,penalty.factor= 1/runif(p,weakness,1),...)$beta!=0
   }else{
-    if(is.factor(y)&length(levels(y))>2){
+    if (is.factor(y) && length(levels(y)) > 2) {
       temp <- glmnet(x[subsets[,index],],y[subsets[,index]],lambda=lambda
                      ,penalty.factor= 1/runif(p,weakness,1),...)[[2]]
       temp <- lapply(temp,as.matrix)
@@ -208,7 +208,7 @@ glmnet.subset <- function(index,subsets,x,y,lambda,weakness,p,...){
 #' }
 #' @export stabsel
 stabsel <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6){
-  if(pi_thr <= 0.5 | pi_thr >= 1) stop("pi_thr needs to be > 0.5 and < 1!")
+  if (pi_thr <= 0.5 || pi_thr >= 1) stop("pi_thr needs to be > 0.5 and < 1!")
   if(is(x$fit[1],"multnet")){
     p <- dim(x$fit$beta[[1]])[1]
   }else{
@@ -217,7 +217,7 @@ stabsel <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6){
   type <- match.arg(type)
   switch(type,
          "pcer"={
-           if(error>=1 | error<=0)stop("pcer needs to be > 0 and < 1!")
+           if (error >= 1 || error <= 0) stop("pcer needs to be > 0 and < 1!")
            qv <- ceiling(sqrt(error* p * (2*pi_thr-1)*p)) },
          "pfer"={
            qv <- ceiling(sqrt(error * (2*pi_thr-1)*p)) }
@@ -348,4 +348,3 @@ plot.stabpath <- function(x,error=0.05,type=c("pfer","pcer"),pi_thr=0.6,xvar=c("
   return(sel)
 }
 NULL
-

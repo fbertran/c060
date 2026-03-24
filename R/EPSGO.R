@@ -294,12 +294,12 @@ EPSGO<- function(
 	
 	if (verbose) print(X)
 	
-	if(show !="none" & !is.null(pdf.name)) { 
+	if(show !="none" && !is.null(pdf.name)) { 
 		pdf(pdf.name, pdf.width, pdf.height)
 		par(mfrow=my.mfrow)
 	}
 
-	if ( (show !="none") & (D<=2 )){
+	if ((show !="none") && (D<=2)) {
 		# 1D plot
 		if (D==1) {
 			plot(X, xlab="Index", ylab=rownames(bounds)[1], col="orange", pch=20,
@@ -338,8 +338,8 @@ EPSGO<- function(
 	Q <-Q[!is.na(Q)]
 	
 	# add start.q.values to the plot
-	if (show !="none" & D ==1)  text( c(1: nrow(X)),X, labels=round(Q,6), pos=1, cex=0.5 )
-	if (show !="none" & D ==2)  text( X, labels=signif(Q,6), pos=1, cex=0.5 )
+	if (show !="none" && D == 1) text(c(1:nrow(X)), X, labels = round(Q, 6), pos = 1, cex = 0.5)
+	if (show !="none" && D == 2) text(X, labels = signif(Q, 6), pos = 1, cex = 0.5)
 	
 	#		# 4. train Online GP
 	
@@ -591,9 +591,9 @@ EPSGO<- function(
 		visited <-  Xtrain - matrix(xmax, nrow=nrow(Xtrain), ncol= ncol(Xtrain), byrow=TRUE) 
 		visited<- any (	apply (visited == 0 , 1, all )  )
 		
-		if ( (visited )   | (abs(fmin - fminold) < 0.01) & ((EImax - EImean)^2 <= 0.1*EIstd)  ){
+		if (visited || ((abs(fmin - fminold) < 0.01) && ((EImax - EImean)^2 <= 0.1 * EIstd))) {
 			if (visited) print( "The new point with min E[I(p)] is already in the set of visited points.")
-			if ((abs(fmin - fminold) < 0.01) & ((EImax - EImean)^2 <= 0.1*EIstd) ) {
+			if ((abs(fmin - fminold) < 0.01) && ((EImax - EImean)^2 <= 0.1 * EIstd)) {
 				print( "the differences in functions between 2 last iterations is small, stop iterations") 
 			}
 			finished = TRUE
@@ -627,7 +627,7 @@ EPSGO<- function(
 	
 	} # end of while (!finished) 
 		
-	if(show !="none" & !is.null(pdf.name)) dev.off()	
+	if(show !="none" && !is.null(pdf.name)) dev.off()	
 		
 	# define the set of points with the same fmin
 		tmp.set<-data.frame(Xtrain, f=Ytrain)
