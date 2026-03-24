@@ -3,6 +3,8 @@
 ## c060 0.5-0
 
 - Code update to expose directly some errors to make debugging easier.
+- Code fixes to use calar guards
+- Code fix to implement backward compatibility
 
 ## c060 0.4-0
 

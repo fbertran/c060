@@ -24,6 +24,8 @@ test_that("stabpath returns a coherent matrix path", {
   
   sp <- stabpath(y = y, x = x, steps = 20L, weakness = 1, family = "binomial")
   expect_true(is.matrix(sp$stabpath))
+  expect_true(is.matrix(sp$x))
+  expect_equal(sp$x, sp$stabpath)
   expect_equal(nrow(sp$stabpath), p)
   expect_true(ncol(sp$stabpath) >= 1)
   expect_true(all(is.finite(sp$stabpath)))
@@ -45,4 +47,20 @@ test_that("stabsel selects variables at or above threshold (may be empty)", {
   } else {
     succeed("No variables crossed threshold in this tiny run (acceptable)")
   }
+})
+
+test_that("plot.stabpath works on fresh stabpath output", {
+  set.seed(128)
+  n <- 60; p <- 8
+  x <- matrix(rnorm(n * p), n, p)
+  eta <- drop(scale(x[, 1] * 1.5 - x[, 2]))
+  y <- factor(rbinom(n, 1, 1 / (1 + exp(-eta))), levels = c(0, 1))
+
+  sp <- stabpath(y = y, x = x, steps = 12L, weakness = 1, family = "binomial")
+
+  tf <- tempfile(fileext = ".pdf")
+  grDevices::pdf(tf)
+  on.exit(grDevices::dev.off(), add = TRUE)
+
+  expect_no_error(plot(sp))
 })
