@@ -1,33 +1,19 @@
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
-
 # c060
 
-# Extended Inference for Lasso and Elastic-Net Regularized Cox and Generalized Linear Models <img src="man/figures/logo.png" align="right" width="200"/>
+# Extended Inference for Lasso and Elastic-Net Regularized Cox and Generalized Linear Models ![](reference/figures/logo.png)
 
 ## Maintainer F. Bertrand
 
 <https://doi.org/10.32614/CRAN.package.c060>
 
-<!-- badges: start -->
-[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.c060-blue.svg)](https://doi.org/10.32614/CRAN.package.c060)
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![R-CMD-check](https://github.com/fbertran/c060/workflows/R-CMD-check/badge.svg)](https://github.com/fbertran/c060/actions)
-[![Codecov test coverage](https://codecov.io/gh/fbertran/c060/branch/master/graph/badge.svg)](https://app.codecov.io/gh/fbertran/c060?branch=master)
-[![CRAN status](https://www.r-pkg.org/badges/version/c060)](https://CRAN.R-project.org/package=c060)
-[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/c060)](https://cran.r-project.org/package=c060)
-[![GitHub Repo stars](https://img.shields.io/github/stars/fbertran/c060?style=social)](https://github.com/fbertran/c060)
-[![R-CMD-check](https://github.com/fbertran/c060/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fbertran/c060/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
-
-The goal of the `c060` package is to provide additional functions to perform stability selection, model validation and parameter tuning for glmnet models.
+The goal of the `c060` package is to provide additional functions to
+perform stability selection, model validation and parameter tuning for
+glmnet models.
 
 ## Installation
 
-You can install the released version of c060 from [CRAN](https://CRAN.R-project.org) with:
-
+You can install the released version of c060 from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("c060")
@@ -35,12 +21,10 @@ install.packages("c060")
 
 And the development version from [GitHub](https://github.com/) with:
 
-
 ``` r
 install.packages("devtools")
 devtools::install_github("fbertran/c060")
 ```
-
 
 # Examples
 
@@ -84,7 +68,6 @@ plot(res)
 #> ! object 'res' not found
 ```
 
-
 ## Multinomial Stability Paths
 
 ``` r
@@ -96,7 +79,6 @@ plot(res)
 #> Error:
 #> ! object 'res' not found
 ```
-
 
 ## Poisson Stability Paths
 
@@ -138,8 +120,6 @@ plot(res)
 #> ! object 'res' not found
 ```
 
-
-
 ## Example from glmnet package
 
 ``` r
@@ -148,7 +128,6 @@ library(glmnet)
 library(survival)
 library(peperr)
 ```
-
 
 ``` r
 N=1000;p=30
@@ -162,9 +141,7 @@ tcens=rbinom(n=N,prob=.3,size=1)# censoring indicator
 y=Surv(ty,1-tcens)
 ```
 
-
 # EPSGO
-
 
 ``` r
 set.seed(1010)
@@ -180,7 +157,6 @@ px=px/(1+px)
 ly=rbinom(n=length(px),prob=px,size=1)
 set.seed(1011)
 ```
-
 
 ## y - binomial
 
@@ -212,7 +188,6 @@ summary(fit)
 #> Error in `h()`:
 #> ! error in evaluating the argument 'object' in selecting a method for function 'summary': object 'fit' not found
 ```
-
 
 ## y - multinomial: low - low 25%, middle - (25,75)-quantiles, high - larger 75%.
 
@@ -270,4 +245,3 @@ summary(fit)
 #> Error in `h()`:
 #> ! error in evaluating the argument 'object' in selecting a method for function 'summary': object 'fit' not found
 ```
-

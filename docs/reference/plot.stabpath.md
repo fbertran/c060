@@ -1,0 +1,124 @@
+# function to plot a stability path
+
+Given a desired family-wise error rate (FWER) and a stability path
+calculated with `stability.path` the function selects an stable set of
+features and plots the stability path and the corresponding
+regularization path.
+
+## Usage
+
+``` r
+# S3 method for class 'stabpath'
+plot(
+  x,
+  error = 0.05,
+  type = c("pfer", "pcer"),
+  pi_thr = 0.6,
+  xvar = c("lambda", "norm", "dev"),
+  col.all = "black",
+  col.sel = "red",
+  ...
+)
+```
+
+## Arguments
+
+- x:
+
+  an object of class "stabpath" as returned by the function `stabpath`.
+
+- error:
+
+  the desired type I error level w.r.t. to the chosen type I error rate.
+
+- type:
+
+  The type I error rate used for controlling the number falsely selected
+  variables. If `type="pfer"` the per-family error rate is controlled
+  and `error` corresponds to the expected number of type I errors.
+  Selecting `type="pfer"` and `error` in the range of 0 \> `error` \< 1
+  will control the family-wise error rate, i.e. the probability that at
+  least one variable in the estimated stable set has been falsely
+  selected. If `type="pcer"` the per-comparison error rate is controlled
+  and `error` corresponds to the expected number of type I errors
+  divided by the number variables.
+
+- pi_thr:
+
+  the threshold used for the stability selection, should be in the range
+  of 0.5 \> pi_thr \< 1.
+
+- xvar:
+
+  the variable used for the xaxis, e.g. for "lambda" the selection
+  probabilities are plotted along the log of the penalization
+  parameters, for "norm" along the L1-norm and for "dev" along the
+  fraction of explained deviance.
+
+- col.all:
+
+  the color used for the variables that are not in the estimated stable
+  set
+
+- col.sel:
+
+  the color used for the variables in the estimated stable set
+
+- ...:
+
+  further arguments that are passed to matplot
+
+## Value
+
+a list of four objects
+
+- stable:
+
+  a vector giving the positions of the estimated stable variables
+
+- lambda:
+
+  the penalization parameter used for the stability selection
+
+- lpos:
+
+  the position of the penalization parameter in the regularization path
+
+- error:
+
+  the desired type I error level w.r.t. to the chosen type I error rate
+
+- type:
+
+  the type I error rate
+
+## References
+
+Meinshausen N. and Buehlmann P. (2010), Stability Selection, Journal of
+the Royal Statistical Society: Series B (Statistical Methodology) Volume
+72, Issue 4, pages 417-473.  
+Sill M., Hielscher T., Becker N. and Zucknick M. (2014), *c060: Extended
+Inference with Lasso and Elastic-Net Regularized Cox and Generalized
+Linear Models, Journal of Statistical Software, Volume 62(5), pages
+1–22.* https://doi.org/10.18637/jss.v062.i05.
+
+## See also
+
+[`stabsel`](https://fbertran.github.io/c060/reference/stabsel.md)`,`[`stabpath`](https://fbertran.github.io/c060/reference/stabpath.md)
+
+## Author
+
+Martin Sill \\ <m.sill@dkfz.de>
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+#gaussian
+set.seed(1234)
+x=matrix(rnorm(100*1000,0,1),100,1000)
+y <- x[1:100,1:1000]%*%c(rep(2,5),rep(-2,5),rep(.1,990))
+res <- stabpath(y,x,weakness=1,mc.cores=2)
+plot(res,error=.5,type='pfer')
+} # }
+```

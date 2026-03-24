@@ -23,6 +23,44 @@ test_that("fit.glmnet (binomial) produces a valid glmnet fit", {
   expect_true(all(is.finite(prd)))
 })
 
+test_that("glmnet wrappers validate matrix orientation and penalty.factor length", {
+  skip_if_not_installed("glmnet")
+  skip_if_not_installed("survival")
+  set.seed(123)
+  n <- 30; p <- 6
+  x <- matrix(rnorm(n * p), n, p)
+  y_bin <- rbinom(n, 1, 0.5)
+  y_surv <- survival::Surv(rexp(n), rbinom(n, 1, 0.7))
+
+  expect_error(
+    fit.glmnet(response = y_bin, x = t(x), cplx = 0.1, family = "binomial"),
+    "expects x to have one row per observation"
+  )
+
+  expect_error(
+    fit.glmnet(
+      response = y_bin,
+      x = x,
+      cplx = 0.1,
+      family = "binomial",
+      penalty.factor = rep(1, nrow(x))
+    ),
+    "expects penalty.factor to have length ncol\\(x\\)"
+  )
+
+  expect_error(
+    complexity.glmnet(
+      response = y_surv,
+      x = x,
+      full.data = as.data.frame(x),
+      family = "cox",
+      nfolds = 3L,
+      penalty.factor = rep(1, nrow(x))
+    ),
+    "expects penalty.factor to have length ncol\\(x\\)"
+  )
+})
+
 test_that("PLL.coxnet prefers true over permuted outcome", {
   skip_if_not_installed("glmnet")
   skip_if_not_installed("survival")
@@ -64,5 +102,4 @@ test_that("tune.glmnet.interval returns a model list with alpha/lambda", {
   expect_true(is.list(res$model))
   expect_true(all(c("alpha", "lambda") %in% names(res$model)))
 })
-
 

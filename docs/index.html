@@ -27,7 +27,7 @@
 
     <a class="navbar-brand me-2" href="index.html">c060</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4-0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5-0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,21 +87,11 @@
 <span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">1000</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,<span class="fl">100</span>,<span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.1</span>,<span class="fl">990</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in `stabpath()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "stabpath"</span></span>
 <span><span class="fu"><a href="reference/stabsel.html">stabsel</a></span><span class="op">(</span><span class="va">res</span>,error<span class="op">=</span><span class="fl">0.05</span>,type<span class="op">=</span><span class="st">"pfer"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; $stable</span></span>
-<span><span class="co">#&gt; integer(0)</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $lambda</span></span>
-<span><span class="co">#&gt; [1] 2.02235</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $lpos</span></span>
-<span><span class="co">#&gt; [1] 8</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $error</span></span>
-<span><span class="co">#&gt; [1] 0.05</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; $type</span></span>
-<span><span class="co">#&gt; [1] "pfer"</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `stabsel()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "stabsel"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="gaussian-stability-paths">Gaussian Stability Paths<a class="anchor" aria-label="anchor" href="#gaussian-stability-paths"></a>
@@ -111,13 +101,11 @@
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">1000</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,<span class="fl">100</span>,<span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.1</span>,<span class="fl">990</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in `stabpath()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "stabpath"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
-<div class="figure">
-<img src="reference/figures/README-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="100%"><p class="caption">
-plot of chunk unnamed-chunk-5
-</p>
-</div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'res' not found</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="binomial-stability-paths">Binomial Stability Paths<a class="anchor" aria-label="anchor" href="#binomial-stability-paths"></a>
@@ -125,13 +113,11 @@ plot of chunk unnamed-chunk-5
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,<span class="fl">100</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"binomial"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in `stabpath()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "stabpath"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
-<div class="figure">
-<img src="reference/figures/README-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="100%"><p class="caption">
-plot of chunk unnamed-chunk-6
-</p>
-</div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'res' not found</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="multinomial-stability-paths">Multinomial Stability Paths<a class="anchor" aria-label="anchor" href="#multinomial-stability-paths"></a>
@@ -139,16 +125,11 @@ plot of chunk unnamed-chunk-6
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,<span class="fl">100</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"multinomial"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Warning in mclapply(1:steps, mc.cores = mc.cores, glmnet.subset, subsets, :</span></span>
-<span><span class="co">#&gt; all scheduled cores encountered errors in user code</span></span>
-<span><span class="co">#&gt; Error in res[[1]]: subscript out of bounds</span></span>
+<span><span class="co">#&gt; Error in `stabpath()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "stabpath"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
-<div class="figure">
-<img src="reference/figures/README-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="100%"><p class="caption">
-plot of chunk unnamed-chunk-7
-</p>
-</div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'res' not found</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="poisson-stability-paths">Poisson Stability Paths<a class="anchor" aria-label="anchor" href="#poisson-stability-paths"></a>
@@ -162,13 +143,11 @@ plot of chunk unnamed-chunk-7
 <span><span class="va">mu</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span></span>
 <span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html" class="external-link">rpois</a></span><span class="op">(</span><span class="va">N</span>,<span class="va">mu</span><span class="op">)</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"poisson"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in `stabpath()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "stabpath"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
-<div class="figure">
-<img src="reference/figures/README-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="100%"><p class="caption">
-plot of chunk unnamed-chunk-8
-</p>
-</div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'res' not found</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="cox-stability-paths">Cox Stability Paths<a class="anchor" aria-label="anchor" href="#cox-stability-paths"></a>
@@ -186,13 +165,11 @@ plot of chunk unnamed-chunk-8
 <span><span class="va">tcens</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html" class="external-link">rbinom</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">N</span>,prob<span class="op">=</span><span class="fl">.3</span>,size<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">y</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind</a></span><span class="op">(</span>time<span class="op">=</span><span class="va">ty</span>,status<span class="op">=</span><span class="fl">1</span><span class="op">-</span><span class="va">tcens</span><span class="op">)</span></span>
 <span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/stabpath.html">stabpath</a></span><span class="op">(</span><span class="va">y</span>,<span class="va">x</span>,weakness<span class="op">=</span><span class="fl">1</span>,mc.cores<span class="op">=</span><span class="fl">2</span>,family<span class="op">=</span><span class="st">"cox"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in `stabpath()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "stabpath"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in t.default(x$x): argument is not a matrix</span></span></code></pre></div>
-<div class="figure">
-<img src="reference/figures/README-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="100%"><p class="caption">
-plot of chunk unnamed-chunk-9
-</p>
-</div>
+<span><span class="co">#&gt; Error:</span></span>
+<span><span class="co">#&gt; ! object 'res' not found</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example-from-glmnet-package">Example from glmnet package<a class="anchor" aria-label="anchor" href="#example-from-glmnet-package"></a>
@@ -238,16 +215,8 @@ plot of chunk unnamed-chunk-9
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
 <span><span class="va">nfolds</span> <span class="op">=</span> <span class="fl">10</span></span>
 <span><span class="va">foldid</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/balancedFolds.html">balancedFolds</a></span><span class="op">(</span>class.column.factor<span class="op">=</span><span class="va">y.classes</span>, cross.outer<span class="op">=</span><span class="va">nfolds</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 121 </span></span>
-<span><span class="co">#&gt; 2 </span></span>
-<span><span class="co">#&gt; 3 </span></span>
-<span><span class="co">#&gt; 4 </span></span>
-<span><span class="co">#&gt; 5 </span></span>
-<span><span class="co">#&gt; 6 </span></span>
-<span><span class="co">#&gt; 7 </span></span>
-<span><span class="co">#&gt; 8 </span></span>
-<span><span class="co">#&gt; 9 </span></span>
-<span><span class="co">#&gt; 10</span></span>
+<span><span class="co">#&gt; Error in `balancedFolds()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "balancedFolds"</span></span>
 <span><span class="va">bounds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>alpha<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">bounds</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"lower"</span>,<span class="st">"upper"</span><span class="op">)</span></span>
 <span> </span>
@@ -263,401 +232,22 @@ plot of chunk unnamed-chunk-9
 <span>             type.min <span class="op">=</span> <span class="st">"lambda.1se"</span>,</span>
 <span>             type.measure <span class="op">=</span> <span class="st">"mse"</span>,</span>
 <span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.04184</span></span>
-<span><span class="co">#&gt;     Xtrain    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;      alpha</span></span>
-<span><span class="co">#&gt; [1,]     0</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.01859</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.03437</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.02538</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
-<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.00565</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
-<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
-<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.02255</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
-<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
-<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
-<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.00881</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
-<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
-<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
-<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
-<span><span class="co">#&gt; 28 0.02255 0.4518852</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.01515</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
-<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
-<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
-<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
-<span><span class="co">#&gt; 28 0.02255 0.4518852</span></span>
-<span><span class="co">#&gt; 29 0.00881 0.4553102</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span></code></pre></div>
-<div class="figure">
-<img src="reference/figures/README-unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13" width="100%"><p class="caption">
-plot of chunk unnamed-chunk-13
-</p>
-</div>
-<pre><code><span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.00258</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.4427822</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.4422716</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.4419218</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.4444470</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.4435479</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.4434463</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.4438921</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.4440248</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.4426631</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.4444240</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.4431161</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.4422268</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.4432506</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.4420846</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.4534574</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.4423172</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.4430704</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.4419665</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.4462451</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.4426950</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.4425921</span></span>
-<span><span class="co">#&gt; 22 0.04184 0.4502101</span></span>
-<span><span class="co">#&gt; 23 0.00000 0.4563529</span></span>
-<span><span class="co">#&gt; 24 0.01859 0.4535900</span></span>
-<span><span class="co">#&gt; 25 0.03437 0.4498726</span></span>
-<span><span class="co">#&gt; 26 0.02538 0.4515460</span></span>
-<span><span class="co">#&gt; 27 0.00565 0.4550679</span></span>
-<span><span class="co">#&gt; 28 0.02255 0.4518852</span></span>
-<span><span class="co">#&gt; 29 0.00881 0.4553102</span></span>
-<span><span class="co">#&gt; 30 0.01515 0.4539218</span></span>
-<span><span class="co">#&gt; [1] "No changes in the last 10 iterations, break iterations"</span></span>
+<span><span class="co">#&gt; Error in `EPSGO()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "EPSGO"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
-<span><span class="co">#&gt;             Length Class      Mode</span></span>
-<span><span class="co">#&gt; fmin         1     -none-     numeric</span></span>
-<span><span class="co">#&gt; xmin         1     -none-     numeric</span></span>
-<span><span class="co">#&gt; iter         1     -none-     numeric</span></span>
-<span><span class="co">#&gt; neval        1     -none-     numeric</span></span>
-<span><span class="co">#&gt; maxevals     1     -none-     numeric</span></span>
-<span><span class="co">#&gt; seed         1     -none-     numeric</span></span>
-<span><span class="co">#&gt; bounds       2     -none-     numeric</span></span>
-<span><span class="co">#&gt; Q.func       1     -none-     character</span></span>
-<span><span class="co">#&gt; points.fmin  2     data.frame list</span></span>
-<span><span class="co">#&gt; Xtrain      31     -none-     numeric</span></span>
-<span><span class="co">#&gt; Ytrain      31     -none-     numeric</span></span>
-<span><span class="co">#&gt; gp.seed     10     -none-     numeric</span></span>
-<span><span class="co">#&gt; model.list  31     -none-     list</span></span></code></pre>
+<span><span class="co">#&gt; Error in `h()`:</span></span>
+<span><span class="co">#&gt; ! error in evaluating the argument 'object' in selecting a method for function 'summary': object 'fit' not found</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="y---multinomial-low---low-25-middle---2575-quantiles-high---larger-75">y - multinomial: low - low 25%, middle - (25,75)-quantiles, high - larger 75%.<a class="anchor" aria-label="anchor" href="#y---multinomial-low---low-25-middle---2575-quantiles-high---larger-75"></a>
 </h2>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y.classes</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">y</span> <span class="op">&lt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">y</span>,<span class="fl">0.25</span><span class="op">)</span>,<span class="fl">1</span>, <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">y</span> <span class="op">&gt;=</span> <span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">y</span>,<span class="fl">0.75</span><span class="op">)</span>,<span class="fl">3</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
 <span><span class="va">nfolds</span> <span class="op">=</span> <span class="fl">10</span></span>
 <span><span class="va">foldid</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/balancedFolds.html">balancedFolds</a></span><span class="op">(</span>class.column.factor<span class="op">=</span><span class="va">y.classes</span>, cross.outer<span class="op">=</span><span class="va">nfolds</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 1231 </span></span>
-<span><span class="co">#&gt; 2 </span></span>
-<span><span class="co">#&gt; 3 </span></span>
-<span><span class="co">#&gt; 4 </span></span>
-<span><span class="co">#&gt; 5 </span></span>
-<span><span class="co">#&gt; 6 </span></span>
-<span><span class="co">#&gt; 7 </span></span>
-<span><span class="co">#&gt; 8 </span></span>
-<span><span class="co">#&gt; 9 </span></span>
-<span><span class="co">#&gt; 10</span></span>
+<span><span class="co">#&gt; Error in `balancedFolds()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "balancedFolds"</span></span>
 <span><span class="va">bounds</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>alpha<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">bounds</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"lower"</span>,<span class="st">"upper"</span><span class="op">)</span></span>
 <span> </span>
@@ -672,228 +262,16 @@ plot of chunk unnamed-chunk-13
 <span>             type.min <span class="op">=</span> <span class="st">"lambda.1se"</span>,</span>
 <span>             type.measure <span class="op">=</span> <span class="st">"mse"</span>,</span>
 <span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;       alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.0605</span></span>
-<span><span class="co">#&gt;     Xtrain    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.03825</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
-<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.07476</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
-<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
-<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;      alpha</span></span>
-<span><span class="co">#&gt; [1,]     0</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
-<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
-<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
-<span><span class="co">#&gt; 24 0.07476 0.5974274</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.02692</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
-<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
-<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
-<span><span class="co">#&gt; 24 0.07476 0.5974274</span></span>
-<span><span class="co">#&gt; 25 0.00000 0.6118007</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "the differences in functions between 2 last iterations is small, stop iterations"</span></span>
-<span><span class="co">#&gt; [1] "finished? TRUE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.02692</span></span>
-<span><span class="co">#&gt;      alpha    Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 0.5889776</span></span>
-<span><span class="co">#&gt; 2  0.85311 0.5884918</span></span>
-<span><span class="co">#&gt; 3  0.53235 0.5902795</span></span>
-<span><span class="co">#&gt; 4  0.13097 0.5943578</span></span>
-<span><span class="co">#&gt; 5  0.60814 0.5896935</span></span>
-<span><span class="co">#&gt; 6  0.62236 0.5895989</span></span>
-<span><span class="co">#&gt; 7  0.99216 0.5880701</span></span>
-<span><span class="co">#&gt; 8  0.26607 0.5919904</span></span>
-<span><span class="co">#&gt; 9  0.31969 0.5906950</span></span>
-<span><span class="co">#&gt; 10 0.15851 0.5943488</span></span>
-<span><span class="co">#&gt; 11 0.67349 0.5892911</span></span>
-<span><span class="co">#&gt; 12 0.86540 0.5884489</span></span>
-<span><span class="co">#&gt; 13 0.41169 0.5891854</span></span>
-<span><span class="co">#&gt; 14 0.90698 0.5883127</span></span>
-<span><span class="co">#&gt; 15 0.01183 0.6058205</span></span>
-<span><span class="co">#&gt; 16 0.48959 0.5883259</span></span>
-<span><span class="co">#&gt; 17 0.22937 0.5911021</span></span>
-<span><span class="co">#&gt; 18 0.35578 0.5900189</span></span>
-<span><span class="co">#&gt; 19 0.09411 0.5962309</span></span>
-<span><span class="co">#&gt; 20 0.45474 0.5886749</span></span>
-<span><span class="co">#&gt; 21 0.77450 0.5887978</span></span>
-<span><span class="co">#&gt; 22 0.06050 0.5985227</span></span>
-<span><span class="co">#&gt; 23 0.03825 0.5998758</span></span>
-<span><span class="co">#&gt; 24 0.07476 0.5974274</span></span>
-<span><span class="co">#&gt; 25 0.00000 0.6118007</span></span>
-<span><span class="co">#&gt; 26 0.02692 0.6012652</span></span>
+<span><span class="co">#&gt; Error in `EPSGO()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "EPSGO"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
-<span><span class="co">#&gt;             Length Class      Mode     </span></span>
-<span><span class="co">#&gt; fmin         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; xmin         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; iter         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; neval        1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; maxevals     1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; seed         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; bounds       2     -none-     numeric  </span></span>
-<span><span class="co">#&gt; Q.func       1     -none-     character</span></span>
-<span><span class="co">#&gt; points.fmin  2     data.frame list     </span></span>
-<span><span class="co">#&gt; Xtrain      26     -none-     numeric  </span></span>
-<span><span class="co">#&gt; Ytrain      26     -none-     numeric  </span></span>
-<span><span class="co">#&gt; gp.seed      6     -none-     numeric  </span></span>
-<span><span class="co">#&gt; model.list  26     -none-     list</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `h()`:</span></span>
+<span><span class="co">#&gt; ! error in evaluating the argument 'object' in selecting a method for function 'summary': object 'fit' not found</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="gaussian">Gaussian<a class="anchor" aria-label="anchor" href="#gaussian"></a>
 </h2>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
 <span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">1000</span>,<span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,<span class="fl">100</span>,<span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">1000</span><span class="op">]</span><span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>,<span class="fl">5</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">.1</span>,<span class="fl">990</span><span class="op">)</span><span class="op">)</span></span>
@@ -911,223 +289,11 @@ plot of chunk unnamed-chunk-13
 <span>             type.min <span class="op">=</span> <span class="st">"lambda.1se"</span>,</span>
 <span>             type.measure <span class="op">=</span> <span class="st">"mse"</span>,</span>
 <span>             verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;      alpha</span></span>
-<span><span class="co">#&gt; [1,]     1</span></span>
-<span><span class="co">#&gt;     Xtrain   Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
-<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
-<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
-<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
-<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
-<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
-<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
-<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
-<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
-<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
-<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
-<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
-<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
-<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
-<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
-<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
-<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
-<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
-<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
-<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
-<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.97776</span></span>
-<span><span class="co">#&gt;      alpha   Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
-<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
-<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
-<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
-<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
-<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
-<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
-<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
-<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
-<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
-<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
-<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
-<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
-<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
-<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
-<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
-<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
-<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
-<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
-<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
-<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
-<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.95773</span></span>
-<span><span class="co">#&gt;      alpha   Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
-<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
-<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
-<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
-<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
-<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
-<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
-<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
-<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
-<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
-<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
-<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
-<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
-<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
-<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
-<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
-<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
-<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
-<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
-<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
-<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
-<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
-<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.98756</span></span>
-<span><span class="co">#&gt;      alpha   Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
-<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
-<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
-<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
-<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
-<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
-<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
-<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
-<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
-<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
-<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
-<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
-<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
-<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
-<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
-<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
-<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
-<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
-<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
-<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
-<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
-<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
-<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
-<span><span class="co">#&gt; 24 0.95773 25.15577</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "finished? FALSE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.80954</span></span>
-<span><span class="co">#&gt;      alpha   Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
-<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
-<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
-<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
-<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
-<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
-<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
-<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
-<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
-<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
-<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
-<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
-<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
-<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
-<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
-<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
-<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
-<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
-<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
-<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
-<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
-<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
-<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
-<span><span class="co">#&gt; 24 0.95773 25.15577</span></span>
-<span><span class="co">#&gt; 25 0.98756 25.10930</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; ...done</span></span>
-<span><span class="co">#&gt; [1] "the differences in functions between 2 last iterations is small, stop iterations"</span></span>
-<span><span class="co">#&gt; [1] "finished? TRUE"</span></span>
-<span><span class="co">#&gt; [1] "X"</span></span>
-<span><span class="co">#&gt;        alpha</span></span>
-<span><span class="co">#&gt; [1,] 0.80954</span></span>
-<span><span class="co">#&gt;      alpha   Ytrain</span></span>
-<span><span class="co">#&gt; 1  0.73445 25.59440</span></span>
-<span><span class="co">#&gt; 2  0.85311 25.34047</span></span>
-<span><span class="co">#&gt; 3  0.53235 26.20553</span></span>
-<span><span class="co">#&gt; 4  0.13097 32.02254</span></span>
-<span><span class="co">#&gt; 5  0.60814 25.93154</span></span>
-<span><span class="co">#&gt; 6  0.62236 25.88775</span></span>
-<span><span class="co">#&gt; 7  0.99216 25.10230</span></span>
-<span><span class="co">#&gt; 8  0.26607 29.01779</span></span>
-<span><span class="co">#&gt; 9  0.31969 28.01304</span></span>
-<span><span class="co">#&gt; 10 0.15851 31.00683</span></span>
-<span><span class="co">#&gt; 11 0.67349 25.74568</span></span>
-<span><span class="co">#&gt; 12 0.86540 25.31520</span></span>
-<span><span class="co">#&gt; 13 0.41169 26.83464</span></span>
-<span><span class="co">#&gt; 14 0.90698 25.23994</span></span>
-<span><span class="co">#&gt; 15 0.01183 38.56498</span></span>
-<span><span class="co">#&gt; 16 0.48959 26.40450</span></span>
-<span><span class="co">#&gt; 17 0.22937 29.94172</span></span>
-<span><span class="co">#&gt; 18 0.35578 27.74582</span></span>
-<span><span class="co">#&gt; 19 0.09411 32.97585</span></span>
-<span><span class="co">#&gt; 20 0.45474 26.58546</span></span>
-<span><span class="co">#&gt; 21 0.77450 25.49951</span></span>
-<span><span class="co">#&gt; 22 1.00000 25.09094</span></span>
-<span><span class="co">#&gt; 23 0.97776 25.12374</span></span>
-<span><span class="co">#&gt; 24 0.95773 25.15577</span></span>
-<span><span class="co">#&gt; 25 0.98756 25.10930</span></span>
-<span><span class="co">#&gt; 26 0.80954 25.42666</span></span>
+<span><span class="co">#&gt; Error in `EPSGO()`:</span></span>
+<span><span class="co">#&gt; ! could not find function "EPSGO"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span> </span>
-<span><span class="co">#&gt;             Length Class      Mode     </span></span>
-<span><span class="co">#&gt; fmin         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; xmin         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; iter         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; neval        1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; maxevals     1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; seed         1     -none-     numeric  </span></span>
-<span><span class="co">#&gt; bounds       2     -none-     numeric  </span></span>
-<span><span class="co">#&gt; Q.func       1     -none-     character</span></span>
-<span><span class="co">#&gt; points.fmin  2     data.frame list     </span></span>
-<span><span class="co">#&gt; Xtrain      26     -none-     numeric  </span></span>
-<span><span class="co">#&gt; Ytrain      26     -none-     numeric  </span></span>
-<span><span class="co">#&gt; gp.seed      6     -none-     numeric  </span></span>
-<span><span class="co">#&gt; model.list  26     -none-     list</span></span></code></pre></div>
+<span><span class="co">#&gt; Error in `h()`:</span></span>
+<span><span class="co">#&gt; ! error in evaluating the argument 'object' in selecting a method for function 'summary': object 'fit' not found</span></span></code></pre></div>
 </div>
 </div>
 
@@ -1136,7 +302,7 @@ plot of chunk unnamed-chunk-13
 <ul class="list-unstyled">
 <li><a href="https://cloud.r-project.org/package=c060" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/fbertran/c060/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/fbertran/c060/issues/" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/fbertran/c060/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -1177,6 +343,7 @@ plot of chunk unnamed-chunk-13
 <li><a href="https://CRAN.R-project.org/package=c060" class="external-link"><img src="https://www.r-pkg.org/badges/version/c060" alt="CRAN status"></a></li>
 <li><a href="https://cran.r-project.org/package=c060" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/c060" alt="CRAN RStudio mirror downloads"></a></li>
 <li><a href="https://github.com/fbertran/c060" class="external-link"><img src="https://img.shields.io/github/stars/fbertran/c060?style=social" alt="GitHub Repo stars"></a></li>
+<li><a href="https://github.com/fbertran/c060/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/fbertran/c060/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 
@@ -1189,7 +356,7 @@ plot of chunk unnamed-chunk-13
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

@@ -26,6 +26,41 @@ basesurv <- function (response, lp, times.eval = NULL, centered = FALSE)
 ### wrapper for glmnet
 ###############################################
 
+.validate_glmnet_inputs <- function(response, x, caller, args) {
+    x_matrix <- data.matrix(x)
+    n_response <- NROW(response)
+
+    if (NROW(x_matrix) != n_response) {
+        stop(
+            sprintf(
+                "%s expects x to have one row per observation: nrow(x) = %d, NROW(response) = %d.",
+                caller,
+                NROW(x_matrix),
+                n_response
+            ),
+            call. = FALSE
+        )
+    }
+
+    if (!is.null(args$penalty.factor) && length(args$penalty.factor) != NCOL(x_matrix)) {
+        stop(
+            sprintf(
+                "%s expects penalty.factor to have length ncol(x) = %d, not %d.",
+                caller,
+                NCOL(x_matrix),
+                length(args$penalty.factor)
+            ),
+            call. = FALSE
+        )
+    }
+
+    x_matrix
+}
+
+.rethrow_glmnet_error <- function(caller, error) {
+    stop(sprintf("%s failed: %s", caller, conditionMessage(error)), call. = FALSE)
+}
+
 
 
 
@@ -69,12 +104,15 @@ basesurv <- function (response, lp, times.eval = NULL, centered = FALSE)
 #' @export fit.glmnet
 fit.glmnet <- function (response, x, cplx, ...) 
 {
-    #require(glmnet)
-    res <- NULL
-    tryerr <- try(res <- glmnet(y = response, x = data.matrix(x), lambda = cplx,  ...), silent=TRUE)
+    args <- list(...)
+    x_matrix <- .validate_glmnet_inputs(response = response, x = x, caller = "fit.glmnet", args = args)
+    res <- tryCatch(
+        glmnet(y = response, x = x_matrix, lambda = cplx, ...),
+        error = function(e) .rethrow_glmnet_error("fit.glmnet", e)
+    )
 
-    if(!is(tryerr, 'try-error') && is(res,"coxnet")) {
-          res$linear.predictor  <- as.numeric(predict(res, newx=data.matrix(x), type="link"))
+    if (is(res, "coxnet")) {
+          res$linear.predictor  <- as.numeric(predict(res, newx = x_matrix, type = "link"))
           res$response          <- response
     }
     class(res) <- class(res)[1]
@@ -132,14 +170,14 @@ fit.glmnet <- function (response, x, cplx, ...)
 #' @export complexity.glmnet
 complexity.glmnet <- function (response, x, full.data, ...) 
 {
-    #require(glmnet)
-    lambda <- NULL
-    tryerr <- try(cv <- cv.glmnet(y = response, x = data.matrix(x),  ...), silent=TRUE)
-    
-    if(!is(tryerr, 'try-error')){
-      lambda <-cv$lambda.min
-    }    
-    lambda
+    args <- list(...)
+    x_matrix <- .validate_glmnet_inputs(response = response, x = x, caller = "complexity.glmnet", args = args)
+    cv <- tryCatch(
+        cv.glmnet(y = response, x = x_matrix, ...),
+        error = function(e) .rethrow_glmnet_error("complexity.glmnet", e)
+    )
+
+    cv$lambda.min
 }
 
 
@@ -530,4 +568,3 @@ Plot.peperr.curves <- function(x,at.risk=TRUE,allErrors=FALSE,  bootRuns=FALSE, 
      text(x=tmpxaxp[2]+(tmpusr[2]-tmpxaxp[2])/2, y=tmpusr[3], labels="at\nrisk", cex=0.8, pos=3)
   }  
 }
-
